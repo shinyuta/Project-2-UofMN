@@ -1,0 +1,23 @@
+{
+  "name": "starbucks-cups",
+  "version": "1.0.0",
+  "description": "This application will be using certain packages to make a site where you can buy cups",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shinyuta/Project-2-UofMN.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shinyuta/Project-2-UofMN/issues"
+  },
+  "homepage": "https://github.com/shinyuta/Project-2-UofMN#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
