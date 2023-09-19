@@ -11,12 +11,12 @@
 - must include authentication
 - must protect API keys
 
-Heroku Deployment
-Polished UI
-Responsive
-Interactive
-Good-quality coding standards
-Professional ReadMe
+- Heroku Deployment
+- Polished UI
+- Responsive
+- Interactive
+- Good-quality coding standards
+- Professional ReadMe
 
 #### Presentations:
 - Overall concept
