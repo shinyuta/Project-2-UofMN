@@ -11,6 +11,7 @@
 - must include authentication
 - must protect API keys
 
+#### Others
 - Heroku Deployment
 - Polished UI
 - Responsive
