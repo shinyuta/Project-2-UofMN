@@ -1,0 +1,116 @@
+:root {
+    --Main: #5A5A5A;
+    --offwhite: #FAF9F6;
+    --white: white;
+    --light: rgb(189, 189, 189);
+    --dark: rgb(48, 48, 48);
+}
+
+* {
+    margin: 0, auto;
+    padding: 0;
+}
+
+main {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.mug {
+    width: 300px;
+    margin: 1rem;
+    border-radius: 8px;
+    box-shadow: 0.2px 4px 5px black;
+    background-color: var(--light);
+    color: var(--Main);
+    position: relative;
+    overflow: hidden;
+}
+
+.mug img {
+    width: 100%;
+}
+
+.mug-info {
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 1rem 1rem;
+    letter-spacing: .5px;
+}
+
+.mug-info h3 {
+    margin-top: 0;
+    font-weight: bold;
+}
+
+.mug-info span {
+    background-color: var(--Main);
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.mug-info span.price {
+    color: lightgreen;
+}
+
+.mug-body h3{
+    font-weight: bold;
+}
+
+.mug-body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--offwhite);
+    padding: 1rem;
+    max-height: 100%;
+    transform: translateX(-101%);
+    transition: transform 0.3s ease-in;
+    border-radius: 8px;
+}
+
+.mug:hover .mug-body {
+    transform: translateX(0%)
+}
+
+/* .search-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+input {
+    font-size: 1rem;
+}
+
+.mug-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: .25rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.card {
+    border: 1px black;
+    background-color: white;
+    padding: .5rem;
+}
+
+.card > .header {
+    margin-bottom: .25rem;
+}
+
+.card > .body {
+    font-size: .8rem;
+    color: #777;
+}
+
+.hide {
+    display: none;
+} */
