@@ -26,6 +26,10 @@ Cup.init(
     image: {
         type: DataTypes.BLOB,
         allowNull: true,
+    },
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: false,
     }
   },
   {
