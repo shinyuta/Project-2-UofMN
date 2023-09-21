@@ -45,14 +45,15 @@ Cup.init(
         key: 'id',
       },
     },
+
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'cup',
   }
 );
 
-module.exports = User;
+module.exports = Cup;
