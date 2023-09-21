@@ -1,17 +1,20 @@
 const express = require('express');
 const app = express();
 const nodemailer = require('nodemailer');
+const { Email, Password } = require('../env.js');
 
 app.get('/contact', (req,res)=>{
     res.sendFile(__dirname + '/public/contact')
 })
 
 app.post('/contact', (req,res)=>{
+
+    // defining our transporter which will use gmail while passing our credentials which are located elsewhere in our project
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth:{
-            user: 'starbscupcorner@gmail.com',
-            pass: 'lorem' //TODO: create environment variable for this password
+            user: Email,
+            pass: Password
         }
     })
     const mailOptions = {
