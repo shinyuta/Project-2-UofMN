@@ -28,10 +28,11 @@ contactForm.addEventListener('submit', (e) => {
             subject.value = '';
             message.value = '';
         } else {
-
+            alert('Something went wrong sending your message.');
         }
     })
     .catch((error) => {
         console.error('Error:', error);
+        alert('Something went wrong sending your message.')
     });
 })

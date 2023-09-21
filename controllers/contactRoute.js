@@ -12,7 +12,7 @@ app.post('/', (req,res)=>{
         service: 'gmail',
         auth:{
             user: 'starbscupcorner@gmail.com',
-            pass: 'lorem'//TODO: create environment variable for this password
+            pass: 'lorem' //TODO: create environment variable for this password
         }
     })
     const mailOptions = {
