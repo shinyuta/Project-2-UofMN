@@ -2,12 +2,11 @@ const express = require('express');
 const app = express();
 const nodemailer = require('nodemailer');
 
-//! placeholder until we have routes set up.
 app.get('/contact', (req,res)=>{
-    res.sendFile(__dirname + '')
+    res.sendFile(__dirname + '/public/contact')
 })
 
-app.post('/', (req,res)=>{
+app.post('/contact', (req,res)=>{
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth:{
