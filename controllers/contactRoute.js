@@ -19,7 +19,7 @@ app.post('/contact', (req,res)=>{
     })
     const mailOptions = {
         from: req.body.email,
-        to: 'starbscupcorner@gmail.com',
+        to: Email,
         subject: `${req.body.email} has sent us a message! ${req.body.subject}`,
         text: req.body.message
     }
