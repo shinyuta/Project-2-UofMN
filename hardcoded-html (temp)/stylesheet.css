@@ -173,6 +173,7 @@ header ul li {
 }
 
 header ul li a {
+    font-weight: 500;
     background-color: var(--dark);
     color: var(--offwhite);
     text-decoration: none;
@@ -187,7 +188,7 @@ header ul li a::before {
     width: 100%;
     height: 2px;
     bottom: -2px;
-    background: black;
+    background: var(--offwhite);
     transform: scaleX(0);
     transition: transform 0.5s ease-in-out;
     transform-origin: right;
@@ -268,7 +269,7 @@ header .search {
     
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
     header .navigation {
         position: absolute;
         opacity: 0;
@@ -300,10 +301,19 @@ header .search {
         width: 100%;
         height: calc(100vh - 80px);
         padding: 40px;
+        background-color: white;
+    }
+
+    header.open .navigation li {
+        font-size: 1.25em;
+        background-color: white;
     }
 
     header.open .navigation li a {
         font-size: 1.25em;
+        font-weight: 500;
+        background-color: white;
+        color: var(--Main);
     }
 
     .hide {
