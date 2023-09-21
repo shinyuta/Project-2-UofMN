@@ -9,7 +9,6 @@
 * {
     margin: 0, auto;
     padding: 0;
-    /* background-color: var(--offwhite); */
     font-family: 'Raleway', sans-serif;
     box-sizing: border-box;
 }
@@ -127,6 +126,7 @@ input {
 body {
     min-height: 100vh;
     overflow-x: hidden;
+    background-color: var(--offwhite);
 }
 
 header {
@@ -135,38 +135,46 @@ header {
     left: 0;
     width: 100%;
     height: 80px;
-    background: var(--light);
+    background: var(--dark);
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 15px 15px rbga(0,0,0,0.5)
+    box-shadow: 0 1px 10px rgb(121, 121, 121);
 }
 
 .logo {
+    background-color: var(--dark);
+    color: var(--offwhite);
     text-decoration: none;
-    color: var(--main);
     font-size: 1.5em;
     font-weight: 800;
     letter-spacing: 0.1em;
+    height: 50px;
 }
 
-.group {
+.nav-group {
+    background-color: var(--dark);
     display: flex;
     align-items: center;
 }
 
 header ul {
+    background-color: var(--dark);
     position: relative;
     display: flex;
     gap: 30px;
 }
 
 header ul li {
+    background-color: var(--dark);
+    color: var(--offwhite);
     list-style: none;
 }
 
 header ul li a {
+    background-color: var(--dark);
+    color: var(--offwhite);
     text-decoration: none;
     position: relative;
     color: var(--main);
@@ -202,7 +210,7 @@ header .search {
 
 .searchBox {
     position: absolute;
-    left: 0;
+    right: -100%;
     width: 100%;
     height: 100%;
     display: flex;
@@ -212,10 +220,94 @@ header .search {
     transition: 0.5s ease-in-out;
 }
 
+.searchBox.active {
+    right: 0;
+}
+
 .searchBox input {
     width: 100%;
     border: none;
     outline: none;
     height: 50px;
+    color: black;
+    font-size: 1.25em;
+    background: white;
+    border-bottom: 1px solid black;
+}
+
+.searchBtn {
+    position: relative;
+    left: 30px;
+    top: 2px;
+    transition: 0.5s ease-in-out;
+}
+
+.searchBtn.active {
+    left: 0;
+}
+.closeBtn {
+    opacity: 0;    
+    position: relative;
+    top: 1px;
+    visibility: hidden;
+    transition: 0.5s;
+    scale: 0;
+}
+
+.closeBtn.active {
+    opacity: 1;
+    top: 2px;
+    visibility: visible;
+    transition: 0.5s;
+    scale: 1;
+}
+
+.menuToggle {
+    position: relative;
+    display: none;
     
+}
+
+@media (max-width: 600px) {
+    header .navigation {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        left: 100%;
+    }
+
+    .menuToggle {
+        position: absolute;
+        display: block;
+        font-size: 2em;
+        cursor: pointer;
+        transform: translateX(30px);
+        z-index: 10;
+    }
+
+    .searchBtn {
+        left: 0;
+    }
+
+    header.open .navigation {
+        opacity: 1;
+        top: 80px;
+        visibility: visible;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        background: white;
+        width: 100%;
+        height: calc(100vh - 80px);
+        padding: 40px;
+    }
+
+    header.open .navigation li a {
+        font-size: 1.25em;
+    }
+
+    .hide {
+        display: none;
+    }
+
 }

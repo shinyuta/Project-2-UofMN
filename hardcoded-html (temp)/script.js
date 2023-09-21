@@ -10,8 +10,8 @@ dataSearch.addEventListener("input", e => {
     // console.log(users)
     users.forEach(user => {
         // changes visibility of mug-cards 
-        const isVisible = user.name.toLowerCase().includes(value) 
-        || user.email.toLowerCase().includes(value)
+        const isVisible = user.name.toLowerCase().includes(value)
+            || user.email.toLowerCase().includes(value)
         // if visible, unhide user, if !visible hide user (removes hide class) seen in CSS
         user.element.classList.toggle("hide", !isVisible)
     })
