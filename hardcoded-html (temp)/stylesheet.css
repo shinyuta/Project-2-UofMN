@@ -1,14 +1,17 @@
 :root {
-    --Main: #5A5A5A;
+    --Main: black;
     --offwhite: #FAF9F6;
     --white: white;
     --light: rgb(189, 189, 189);
-    --dark: rgb(48, 48, 48);
+    --dark: #006241;
 }
 
 * {
     margin: 0, auto;
     padding: 0;
+    background-color: var(--offwhite);
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
 
 main {
@@ -22,8 +25,8 @@ main {
     margin: 1rem;
     border-radius: 8px;
     box-shadow: 0.2px 4px 5px black;
-    background-color: var(--light);
-    color: var(--Main);
+    background-color: var(--dark);
+    color: var(--offwhite);
     position: relative;
     overflow: hidden;
 }
@@ -33,7 +36,8 @@ main {
 }
 
 .mug-info {
-    color: var(--dark);
+    color: var(--main);
+    background-color: var(--dark);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,21 +48,24 @@ main {
 .mug-info h3 {
     margin-top: 0;
     font-weight: bold;
+    background-color: var(--dark);
 }
 
 .mug-info span {
-    background-color: var(--Main);
+    background-color: var(--offwhite);
     padding: 0.25rem 0.5rem;
     border-radius: 8px;
     font-weight: bold;
 }
 
 .mug-info span.price {
-    color: lightgreen;
+    color: var(--Main);
 }
 
-.mug-body h3{
+.mug-body a{
     font-weight: bold;
+    text-decoration: none;
+    color: var(--main)
 }
 
 .mug-body {
@@ -66,19 +73,20 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
+    color: black;
     background: var(--offwhite);
     padding: 1rem;
     max-height: 100%;
-    transform: translateX(-101%);
+    transform: translateY(101%);
     transition: transform 0.3s ease-in;
     border-radius: 8px;
 }
 
 .mug:hover .mug-body {
-    transform: translateX(0%)
+    transform: translateY(0%)
 }
 
-/* .search-wrap {
+.search-wrap {
     display: flex;
     flex-direction: column;
     gap: .25rem;
@@ -90,27 +98,25 @@ input {
 
 .mug-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: .25rem;
     margin-top: 1rem;
     justify-content: center;
 }
 
-.card {
-    border: 1px black;
-    background-color: white;
-    padding: .5rem;
+.mug-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: .25rem;
+    margin-top: 1rem;
+    justify-content: center;
 }
 
-.card > .header {
-    margin-bottom: .25rem;
-}
-
-.card > .body {
+.card > .mug-desc {
     font-size: .8rem;
     color: #777;
 }
 
 .hide {
     display: none;
-} */
+} 

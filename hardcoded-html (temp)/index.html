@@ -12,61 +12,51 @@
 <body>
     <div class="search-wrap">
         <label for="search"> Search Mugs/Cups </label>
-        <input type="search" id="search">
+        <input type="search" id="search" data-search>
     </div>
 
-    <!-- <div class="mug-cards">
-        <div class="card">
-            <div class="header"> name</div>
-            <div class="body"> mug id </div>
-        </div>
-        <div class="card">
-            <div class="header"> name</div>
-            <div class="body"> mug id </div>
-        </div>
-        <div class="card">
-            <div class="header"> name</div>
-            <div class="body"> mug id </div>
-        </div>
-        <div class="card">
-            <div class="header"> name</div>
-            <div class="body"> mug id </div>
-        </div>
-    </div> -->
-
-    <main id="mug-cards">
+    <!-- ORIGINAL CODE, USED IN JS TEMPLATE BELOW -->
+    <!-- <main id="mug-cards"> 
 
         <div class="mug">
             <img src="https://imgs.search.brave.com/QIfbxrGs2D-p3_R1EfnfOuyz9rMgtqJs396WCx360c8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFBcld1bi1xdUwu/anBn"
                 alt="image">
-
-
+        
+        
             <div class="mug-info">
                 <h3 class="header">Mug Name</h3>
                 <span class="price">$price</span>
             </div>
-
+        
             <div class="mug-body">
-                <h3 class = "username"> Username </h3>
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Impedit, beatae ipsum.
-                Deserunt rerum fugiat eius quis vitae sed sunt quibusdam?
+                <a href="#" class="username"> Username </a>
+                <p class="mug-desc">Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Impedit, beatae ipsum.
+                    Deserunt rerum fugiat eius quis vitae sed sunt quibusdam?
+                </p>
             </div>
-    </main>
+        </div>
+
+    </main> -->
+
+    <div class = "mug-container" data-mug-cards-container></div>
 
     <template data-user-template>
-        <main id="mug-cards">
-
-            <div class="mug">
-                <img src="https://imgs.search.brave.com/QIfbxrGs2D-p3_R1EfnfOuyz9rMgtqJs396WCx360c8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFBcld1bi1xdUwu/anBn"
-                    alt="image">
-
-
-                <div class="mug-info">
-                    <h3 class="header">Mug Name</h3>
-                    <span class="price">$price</span>
-                </div>
-        </main>
+        <div class="mug">
+            <img src="https://imgs.search.brave.com/QIfbxrGs2D-p3_R1EfnfOuyz9rMgtqJs396WCx360c8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFBcld1bi1xdUwu/anBn"
+                alt="image">
+        
+        
+            <div class="mug-info">
+                <h3 class="header" data-header></h3>
+                <span class="price">$price</span>
+            </div>
+        
+            <div class="mug-body">
+                <a href="#" class="username"> Username </a>
+                <p class="mug-desc" data-body></p>
+            </div>
+        </div>
     </template>
 
 </body>
