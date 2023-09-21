@@ -26,15 +26,23 @@ Cup.init(
     image: {
         type: DataTypes.BLOB,
         allowNull: true,
+    },
+    user_id :{
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: 'id'
+      }
     }
+
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'cup',
   }
 );
 
-module.exports = User;
+module.exports = Cup;
