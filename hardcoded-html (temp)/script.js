@@ -27,6 +27,7 @@ fetch("https://jsonplaceholder.typicode.com/users")
             header.textContent = user.name
             body.textContent = user.email
 
+            // adds the card
             mugCardsContainer.append(card)
 
             return { name: user.name, email: user.email, element: card }
