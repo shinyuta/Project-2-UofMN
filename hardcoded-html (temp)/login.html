@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="indexstylesheet.css">
+    <link rel="stylesheet" href="loginstylesheet.css">
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <!-- font -->
@@ -44,50 +44,26 @@
             </div>
     </header>
 
-    <!-- ORIGINAL CODE, USED IN JS TEMPLATE BELOW -->
-    <!-- <main id="mug-cards"> 
-
-        <div class="mug">
-            <img src="https://imgs.search.brave.com/QIfbxrGs2D-p3_R1EfnfOuyz9rMgtqJs396WCx360c8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFBcld1bi1xdUwu/anBn"
-                alt="image">
-        
-        
-            <div class="mug-info">
-                <h3 class="header">Mug Name</h3>
-                <span class="price">$price</span>
+    <div class = "center">
+        <h1>Login</h1>
+        <form method = "post"> 
+            <div class="text-field">
+                <input type="text" required>
+                <span></span>
+                <label>Username</label>
             </div>
-        
-            <div class="mug-body">
-                <a href="#" class="username"> Username </a>
-                <p class="mug-desc">Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Impedit, beatae ipsum.
-                    Deserunt rerum fugiat eius quis vitae sed sunt quibusdam?
-                </p>
+            <div class="text-field">
+                <input type="password" required>
+                <span></span>
+                <label>Password</label>
             </div>
-        </div>
-
-    </main> -->
-
-    <div class = "mug-container" data-mug-cards-container></div>
-
-    <template data-user-template>
-        <div class="mug">
-            <img src="https://imgs.search.brave.com/QIfbxrGs2D-p3_R1EfnfOuyz9rMgtqJs396WCx360c8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFBcld1bi1xdUwu/anBn"
-                alt="image">
-        
-        
-            <div class="mug-info">
-                <h3 class="header" data-header></h3>
-                <span class="price">$price</span>
+            <div class="forgot">Forgot Password?</div>
+            <input type="submit" value="Login">
+            <div class="signup">
+                Not a Member? <a href ="#">Signup</a>
             </div>
-        
-            <div class="mug-body">
-                <a href="#" class="username"> Username </a>
-                <p class="mug-desc" data-body></p>
-            </div>
-        </div>
-    </template>
-
+        </form>
+    </div>
     <!-- icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
