@@ -24,9 +24,6 @@ router.get('/', async (req, res) => {
 
 // GET one Cup
 router.get('/cup/:id', withAuth , async (req, res) => {
-  // If the user is not logged in, redirect the user to the login page
-    // If the user is logged in, allow them to view one cup
-
     try {
       const cupData = await Cup.findByPk(req.params.id);
       const cups = cupData.get({ plain: true });
@@ -35,7 +32,6 @@ router.get('/cup/:id', withAuth , async (req, res) => {
       console.log(err);
       res.status(500).json(err);
     }
-  // }
 });
 
 router.get('/login', (req, res) => {
