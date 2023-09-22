@@ -35,7 +35,11 @@ User.init(
         len: [6],
       },
     },
-  },
+    
+    owner: [1, 6, 15]
+
+    },
+    },
   {
     hooks: {
       async beforeCreate(newUserData) {
