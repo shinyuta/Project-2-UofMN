@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Cup, Launch , User} = require('../models/index');
-const withAuth =  require('../middleware/withAuth')
+const withAuth =  require('../middleware/withAuth');
+const { json } = require('sequelize');
 
 
 // GET all Cups for homepage
@@ -9,15 +10,11 @@ router.get('/', async (req, res) => {
     const cupData = await Cup.findAll({
       include: [
         {model: User, 
-          // through: {
-            //  attributes: 'username'
-            // }
+             attributes: ['username']
           },
-        
         {model: Launch,
-          //  through: {
-          //   attributes: 'name'}
-        }
+            attributes: ['name']
+        },
       ],
       
     });
@@ -26,12 +23,13 @@ router.get('/', async (req, res) => {
       cups.get({ plain: true })
     );
 
-    // res.render('homepage', {
-    //   cups,
-    //   loggedIn: req.session.loggedIn,
+
+    res.render('homepage', {
+      cups,
+      loggedIn: req.session.loggedIn,
       
-    // });
-    res.status(200).json(cupData)
+    });
+    // res.json(cupData)
     // res.status(200).json(cups)
   } catch (err) {
     console.log(err);

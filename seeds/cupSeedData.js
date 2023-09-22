@@ -174,7 +174,8 @@ const cupdata = [
     type: "tumbler",
     size: 16,
     filename: 'Teal-Stainless-Steel-Tumbler.jpg',
-    launch: 2
+    launch: 2,
+    user_id: 2
   },
 ];
 
