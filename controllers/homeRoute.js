@@ -4,10 +4,9 @@ const withAuth =  require('../middleware/withAuth')
 
 
 // GET all Cups for homepage
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const cupData = await Cup.findAll();
-
     const cups = cupData.map((cups) =>
       cups.get({ plain: true })
     );
