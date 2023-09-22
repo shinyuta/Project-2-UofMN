@@ -8,8 +8,16 @@ router.get('/', async (req, res) => {
   try {
     const cupData = await Cup.findAll({
       include: [
-        {model: User, attributes: 'username'},
-        {model: Launch, attributes: 'name'}
+        {model: User, 
+          // through: {
+            //  attributes: 'username'
+            // }
+          },
+        
+        {model: Launch,
+          //  through: {
+          //   attributes: 'name'}
+        }
       ],
       
     });
@@ -18,10 +26,13 @@ router.get('/', async (req, res) => {
       cups.get({ plain: true })
     );
 
-    res.render('homepage', {
-      cups,
-      loggedIn: req.session.loggedIn,
-    });
+    // res.render('homepage', {
+    //   cups,
+    //   loggedIn: req.session.loggedIn,
+      
+    // });
+    res.status(200).json(cupData)
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
