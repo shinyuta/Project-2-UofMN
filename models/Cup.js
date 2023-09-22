@@ -31,7 +31,7 @@ Cup.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    launch: {
+    launch_id: {
       type: DataTypes.STRING,
       references: {
         model: 'launches',
