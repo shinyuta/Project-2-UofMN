@@ -105,7 +105,6 @@ input {
 }
 
 .mug-container {
-    transform: translateY(80px);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: .25rem;
@@ -321,4 +320,131 @@ header .search {
         display: none;
     }
 
+}
+
+/* USER PROFILE */
+
+/* change user navbar icon */
+.nav-user-icon {
+    scale: 150%;
+}
+
+.user-container {
+    width: 100%;
+    height: 100vh;
+    /* background-color: var(--dark); */
+    transform: translateY(-30px);
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile {
+    background: var(--dark);
+    text-align: center;
+    padding: 40px 90px;
+    color: var(--offwhite);
+    position: relative;
+    border-radius: 30px;
+}
+
+.menu {
+    width: 25px;
+    scale: 150%;
+    position: absolute;
+    left: 40px;
+    top: 40px;
+}
+
+.settings {
+    width: 25px;
+    scale: 120%;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+}
+
+.profile-picture {
+    width: 190px;
+    border-radius: 50%;
+    padding: 8px;
+    background-color: var(--offwhite);
+    margin-top: 40px
+}
+
+.profile-bottom {
+    background-color: #70472e;
+    color: var(--offwhite);
+    padding: 10px 0;
+    margin-right: -90px;
+    margin-left: -90px;
+    margin-bottom: -40px;
+    border-radius: 30px;
+}
+
+.profile-bottom ion-icon {
+    width: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.profile-bottom a {
+    text-decoration: none;
+    color: var(--offwhite);
+    font-weight: 700;
+}
+
+.profile-bottom a:hover {
+    text-shadow: 0 0 20px #f9c4a3;
+    transition: 1s;
+}
+
+.profile button {
+    background: var(--offwhite);
+    color: var(--Main);
+    border: none;
+    outline: none;
+    padding: 15px 60px;
+    cursor: pointer;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 13;
+}
+
+.profile button:hover {
+    box-shadow: 0 0 20px #00b87a;
+    transition: 1s;
+}
+
+.profile h3 {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-weight: 600;
+}
+
+.profile .user-desc {
+    margin-top: 5px;
+}
+
+.social-media ion-icon {
+    width: 20px;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.social-media ion-icon:hover {
+    scale: 160%;
+    transition: 1s;
+}
+
+/* USER CUPS */
+
+#user-cups p {
+    background-color: black;
+    padding-bottom: 100px;
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="indexstylesheet.css">
+    <link rel="stylesheet" href="userstylesheet.css">
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <!-- font -->
@@ -12,7 +12,7 @@
     <!-- font -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Comment back in FIX overlapping issue-->
-    <script src="indexscript.js" defer></script>
+    <script src="userscript.js" defer></script>
     <title>Starby's Cup Corner</title>
 </head>
 
@@ -30,7 +30,7 @@
                 <li> <a href = "#"> HOME </a></li>
                 <li> <a href = "#"> ABOUT </a></li>
                 <li> <a href = "#"> CONTACT </a></li>
-                <li> <a href = "#"> LOGIN </a></li>
+                <li> <a href = "#"> <ion-icon name="person-circle-outline" class="nav-user-icon"></ion-icon> </a></li>
             </ul>
             <div class = "search">
                 <span class ="icon"> 
@@ -44,50 +44,33 @@
             </div>
     </header>
 
-    <!-- ORIGINAL CODE, USED IN JS TEMPLATE BELOW -->
-    <!-- <main id="mug-cards"> 
-
-        <div class="mug">
-            <img src="https://imgs.search.brave.com/QIfbxrGs2D-p3_R1EfnfOuyz9rMgtqJs396WCx360c8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFBcld1bi1xdUwu/anBn"
-                alt="image">
-        
-        
-            <div class="mug-info">
-                <h3 class="header">Mug Name</h3>
-                <span class="price">$price</span>
+    <!-- user card -->
+    <div class="user-container">
+        <div class="profile">
+            <ion-icon name="settings-outline" class="settings"></ion-icon>            
+            <ion-icon name="menu-outline" class ="menu"></ion-icon>
+            <img src="../images/profilepicture.png" class="profile-picture">
+            <h3 class ="name" >Yuta Kirihara</h3>
+            <p class="user-desc">Selling and Buying Cups!</p>
+            <div class="social-media">
+                <ion-icon name="logo-instagram" class="instagram"></ion-icon>
+                <ion-icon name="logo-facebook" class="facebook"></ion-icon>
+                <ion-icon name="logo-discord" class="discord"></ion-icon>
             </div>
-        
-            <div class="mug-body">
-                <a href="#" class="username"> Username </a>
-                <p class="mug-desc">Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Impedit, beatae ipsum.
-                    Deserunt rerum fugiat eius quis vitae sed sunt quibusdam?
-                </p>
+            <button type="button" class="followBtn">Follow</button>
+            <div class="profile-bottom">
+                <p><a href="#user-cups">Current Cups!</a></p>
+                <ion-icon name="arrow-down-outline" class="arrow-down"></ion-icon>
             </div>
         </div>
+    </div>
 
-    </main> -->
+    <br/><br/><br/><br/><br/><br/>
 
-    <div class = "mug-container" data-mug-cards-container></div>
-
-    <template data-user-template>
-        <div class="mug">
-            <img src="https://imgs.search.brave.com/QIfbxrGs2D-p3_R1EfnfOuyz9rMgtqJs396WCx360c8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFBcld1bi1xdUwu/anBn"
-                alt="image">
-        
-        
-            <div class="mug-info">
-                <h3 class="header" data-header></h3>
-                <span class="price">$price</span>
-            </div>
-        
-            <div class="mug-body">
-                <a href="#" class="username"> Username </a>
-                <p class="mug-desc" data-body></p>
-            </div>
-        </div>
-    </template>
-
+    <!-- add cards -->
+    <div id ='user-cups'>
+        <p>text</p>
+    </div>
     <!-- icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
