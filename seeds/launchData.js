@@ -1,6 +1,6 @@
 const { launch } = require("../models");
 
-const launches = [
+const launchData = [
   {
     name: "summerSips",
     launch_date: "June 27, 2023",
@@ -15,6 +15,6 @@ const launches = [
   },
 ];
 
-const seedLaunches = () => launches.bulkCreate(cupdata);
+const seedLaunches = () => launch.bulkCreate(launchData);
 
 module.exports = seedLaunches;
