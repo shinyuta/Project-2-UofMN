@@ -12,7 +12,6 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-
       res.status(200).json(userData);
     });
   } catch (err) {
@@ -29,16 +28,14 @@ router.post('/login', async (req, res) => {
         email: req.body.email,
       },
     });
-
     if (!userData) {
       res
         .status(400)
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
-
+  
     const validPassword = await dbUserData.checkPassword(req.body.password);
-
     if (!validPassword) {
       res
         .status(400)
