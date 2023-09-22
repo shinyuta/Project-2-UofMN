@@ -332,7 +332,6 @@ header .search {
 .user-container {
     width: 100%;
     height: 100vh;
-    /* background-color: var(--dark); */
     transform: translateY(-30px);
     background-position: center;
     display: flex;
@@ -443,8 +442,6 @@ header .search {
 }
 
 /* USER CUPS */
-
-#user-cups p {
-    background-color: black;
-    padding-bottom: 100px;
+#user-cups {
+    align-items: center;
 }
