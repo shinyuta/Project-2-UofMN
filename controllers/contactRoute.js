@@ -7,7 +7,7 @@ require('dotenv').config();
 
 app.get('/contact', withAuth, (req,res)=>{
     res.render('contact', { 
-        //!SOMETHING GOES HERE , 
+        layout: 'main', 
         logged_in: req.session.logged_in 
       });
 })
