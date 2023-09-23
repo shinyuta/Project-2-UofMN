@@ -27,13 +27,24 @@ Cup.init(
         type: DataTypes.BLOB,
         allowNull: true,
     },
-    user_id :{
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    launch: {
+      type: DataTypes.STRING,
+      references: {
+        model: 'launches',
+        key: 'id',
+      },
+    },
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "user",
-        key: 'id'
-      }
-    }
+        model: 'user',
+        key: 'id',
+      },
+    },
 
   },
   {
