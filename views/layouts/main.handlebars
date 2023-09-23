@@ -30,7 +30,11 @@
                 <li> <a href = "#"> HOME </a></li>
                 <li> <a href = "#"> ABOUT </a></li>
                 <li> <a href = "#"> CONTACT </a></li>
+                {{#if !loginedIn}}
                 <li> <a href = "#"> LOGIN </a></li>
+                {{ else }}
+                <li> <a href = "#"> LOGOUT </a></li>
+                {{/if}}
             </ul>
             <div class = "search">
                 <span class ="icon"> 
