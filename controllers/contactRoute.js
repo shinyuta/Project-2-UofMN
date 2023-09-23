@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const nodemailer = require('nodemailer');
-const { Email, Password } = require('../env.js');
+require('dotenv').config();
 
 app.get('/contact', (req,res)=>{
     res.sendFile(__dirname + '/public/contact')
@@ -13,8 +13,8 @@ app.post('/contact', (req,res)=>{
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth:{
-            user: Email,
-            pass: Password
+            user: process.env.Email,
+            pass: process.env.Password
         }
     })
     const mailOptions = {
