@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class launch extends Model {}
+class Launches extends Model {}
 
-launch.init(
+Launches.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -16,7 +16,7 @@ launch.init(
             allowNull: false,
         },
         launch_date: {
-            type: DataTypes.DATE,
+            type: DataTypes.STRING,
             allowNull: false,
         },
 
@@ -26,8 +26,9 @@ launch.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'launches',
+        modelName: 'launch',
       }
 );
 
-module.exports = launch;
+
+module.exports = Launches;

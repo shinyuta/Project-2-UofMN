@@ -36,10 +36,10 @@ User.init(
       },
     },
     
-    owner: [1, 6, 15]
+    // owner: [1, 6, 15]
 
-    },
-    },
+    // },
+  },
   {
     hooks: {
       async beforeCreate(newUserData) {
@@ -52,7 +52,7 @@ User.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'user',
-  }
+  },
 );
 
 module.exports = User;

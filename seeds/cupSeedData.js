@@ -1,6 +1,6 @@
-const { cups } = require("../models");
+const { Cup } = require("../models");
 
-const cupdata = [
+const cupData = [
   {
     name: "brown pumpkin",
     type: "tumbler",
@@ -178,6 +178,6 @@ const cupdata = [
   },
 ];
 
-const seedCups = () => cups.bulkCreate(cupdata);
+const seedCups = () => Cup.bulkCreate(cupData);
 
 module.exports = seedCups;

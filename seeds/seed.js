@@ -38,19 +38,37 @@
 
 const sequelize = require('../config/connection');
 const seedCups = require('./cupSeedData');
-const seedLaunch = require('./launchData');
+
+const seedLaunch = require('./launchSeedData');
+
 const seedUser = require('./userSeedData');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
+  
+    
+  await seedUser();
 
   await seedLaunch();
 
-  await seedUser();
-
   await seedCups();
+
+  
 
   process.exit(0);
 };
 
 seedAll();
+
+// const seedDatabase = async () => {
+//   await sequelize.sync({ force: true });
+
+//   await user.bulkCreate(userData, {
+//     individualHooks: true,
+//     returning: true,
+//   });
+
+//   process.exit(0);
+// };
+
+// seedDatabase();

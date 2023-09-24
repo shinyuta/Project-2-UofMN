@@ -1,4 +1,4 @@
-const { users } = require("../models");
+const { User } = require("../models");
 
 // dummy user data grabbed from class work
 const userData = [
@@ -21,6 +21,6 @@ const userData = [
 
 
 
-const seedUsers = () => users.bulkCreate(userData);
+const seedUser = () => User.bulkCreate(userData);
 
-module.exports = seedUsers;
+module.exports = seedUser;
