@@ -6,7 +6,8 @@ const cupData = [
     type: "tumbler",
     size: 16,
     filename: "Brown-Pumpkin-Tumbler.jpg",
-    launch: 3,
+    launch_id: 3,
+    // owned_by_user: 1,
   },
   {
     name: "green drip",

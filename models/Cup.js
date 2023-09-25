@@ -23,28 +23,28 @@ Cup.init(
         type: DataTypes.INTEGER,
         allowNull:false,
     },
-    image: {
-        type: DataTypes.BLOB,
-        allowNull: true,
-    },
+    // image: {
+    //     type: DataTypes.BLOB,
+    //     allowNull: true,
+    // },
     filename: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    launch: {
+    launch_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'launch',
         key: 'id',
       },
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
+    // owned_by_user: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'user',
+    //     key: 'id',
+    //   },
+    // },
 
   },
   {

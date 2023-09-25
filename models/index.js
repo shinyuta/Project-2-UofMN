@@ -3,27 +3,36 @@ const Cup = require("./Cup");
 const User = require("./User");
 const Launch = require("./Launch");
 
-Cup.belongsTo(User, {
-  foreignKey: "user_id",
-});
 
-User.hasMany(Cup, {
-  foreignKey: "user_id",
-});
+// Cup.belongsTo(User,{
+//   foreignKey: 'owned_by_user',
+// });
+
+// User.hasMany(Cup, {
+//   foreignKey: 'cupsOwned'
+// });
 
 Launch.hasMany(Cup, {
-  foreignKey: "launch_id",
+  foreignKey: 'launch_id'
 });
 
-module.exports = { Cup, User };
+Cup.hasOne(Launch,{
+  foreignKey: 'cup_id'
+})
 
-// below with help from
-// https://www.google.com/search?sca_esv=567457903&rlz=1C1ONGR_enUS957US957&sxsrf=AM9HkKm2SxEX9pcTD1WNqSRrkkYiV7MYmg:1695345887899&q=How+to+use+belongs+to+many+in+sequelize+model+javascript&sa=X&sqi=2&ved=2ahUKEwjOnq3Lh72BAxV9jokEHeFFAyQQ1QJ6BAgvEAE&biw=2048&bih=953&dpr=0.94#fpstate=ive&vld=cid:03c6342e,vid:hw6NCvu45JA,st:0
-// and https://stackoverflow.com/questions/29680359/how-to-use-sequelize-belongstomany-associations
-// should make a through table called owner
 
-Cup.belongsToMany(User, { through: "owner" });
 
-User.belongsToMany(Cup, { through: "owner" });
+User.belongsToMany(Cup, { through: 'UserCup' });
+Cup.belongsToMany(User, { through: 'UserCup' });
+Cup.hasMany(User, { through: 'UserCup'});
+User.hasMany(Cup, { through: 'UserCup'});
 
-// await sequelize.sync({ force: true })
+
+// Cup.belongsToMany(User, {
+//   through: 'owner',
+//   foreignKey: 'Cup',
+//   as: 'owned_by',
+// });
+
+
+module.exports = { Cup, User, Launch };

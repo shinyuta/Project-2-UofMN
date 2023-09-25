@@ -36,9 +36,13 @@ User.init(
       },
     },
     
-    // owner: [1, 6, 15]
-
-    // },
+    cupsOwned: {
+      type: DataTypes.INTEGER,
+      // references: {
+      //   model: 'cup',
+      //   key: 'id',
+      // },
+    },
   },
   {
     hooks: {
