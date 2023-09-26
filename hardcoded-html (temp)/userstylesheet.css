@@ -442,6 +442,44 @@ header .search {
 }
 
 /* USER CUPS */
-#user-cups {
+
+.mug-cards {
+    width: auto;
+    height: auto;
+    display: flex;
     align-items: center;
 }
+
+.mug {
+    width: 50%;
+    height: auto;
+    margin: 10px;
+} 
+
+/* switch to 1 per line at 800px width */
+
+@media (max-width: 800px) {
+    #user-cups {
+        align-items: center;
+    }
+    
+    .mug {
+        width: 300px;
+        margin: 1rem;
+        border-radius: 8px;
+        box-shadow: 0.2px 4px 5px black;
+        background-color: var(--dark);
+        color: var(--offwhite);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mug-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: .25rem;
+        margin-top: 1rem;
+        justify-content: center;
+    }
+}
+
