@@ -2,8 +2,8 @@ const Cup = require('./Cup');
 const User = require('./User');
 const Launch = require('./Launch')
 
-Cup.belongsTo(User,{
-    foreignKey: 'user_id',
+Cup.belongsToMany(User,{
+    through: 'User_Cups',
 });
 
 User.hasMany(Cup, {
