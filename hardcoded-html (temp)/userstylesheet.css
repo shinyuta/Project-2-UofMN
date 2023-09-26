@@ -330,6 +330,7 @@ header .search {
 }
 
 .user-container {
+    pointer-events: none;
     width: 100%;
     height: 100vh;
     transform: translateY(-30px);
@@ -337,6 +338,7 @@ header .search {
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .profile {
@@ -373,6 +375,7 @@ header .search {
 }
 
 .profile-bottom {
+    pointer-events: auto;
     background-color: #70472e;
     color: var(--offwhite);
     padding: 10px 0;
@@ -389,17 +392,20 @@ header .search {
 }
 
 .profile-bottom a {
+    pointer-events: auto;
     text-decoration: none;
     color: var(--offwhite);
     font-weight: 700;
 }
 
 .profile-bottom a:hover {
+    pointer-events: auto;
     text-shadow: 0 0 20px #f9c4a3;
     transition: 1s;
 }
 
 .profile button {
+    pointer-events: auto;
     background: var(--offwhite);
     color: var(--Main);
     border: none;
@@ -438,6 +444,7 @@ header .search {
 }
 
 .social-media ion-icon {
+    pointer-events: auto;
     width: 20px;
     cursor: pointer;
     margin-left: 5px;
