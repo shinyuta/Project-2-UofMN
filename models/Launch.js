@@ -16,7 +16,7 @@ Launch.init(
             allowNull: false,
         },
         launch_date: {
-            type: DataTypes.DATE,
+            type: DataTypes.STRING,
             allowNull: false,
         },
 
