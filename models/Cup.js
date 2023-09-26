@@ -23,29 +23,22 @@ Cup.init(
         type: DataTypes.INTEGER,
         allowNull:false,
     },
-    image: {
-        type: DataTypes.BLOB,
-        allowNull: true,
-    },
+    // image: {
+    //     type: DataTypes.BLOB,
+    //     allowNull: true,
+    // },
     filename: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    launch_id: {
+    launchDate: {
       type: DataTypes.INTEGER,
       references: {
         model: 'launches',
         key: 'id',
       },
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
-
+    
   },
   {
     sequelize,
