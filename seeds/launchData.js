@@ -1,4 +1,4 @@
-const { launch } = require("../models");
+const { Launch } = require("../models");
 
 const launchData = [
   {
@@ -15,6 +15,6 @@ const launchData = [
   },
 ];
 
-const seedLaunches = () => launch.bulkCreate(launchData);
+const seedLaunches = () => Launch.bulkCreate(launchData);
 
 module.exports = seedLaunches;

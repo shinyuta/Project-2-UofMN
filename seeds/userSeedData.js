@@ -1,11 +1,12 @@
-const { users } = require("../models");
+const { User } = require("../models");
 
 // dummy user data grabbed from class work
 const userData = [
   {
     username: "Sal",
     email: "sal@hotmail.com",
-    password: 'password1234'
+    password: 'password1234',
+   
   },
   {
     username: "Lernantino",
@@ -21,6 +22,6 @@ const userData = [
 
 
 
-const seedUsers = () => users.bulkCreate(userData);
+const seedUsers = () => User.bulkCreate(userData);
 
 module.exports = seedUsers;

@@ -1,4 +1,4 @@
-const { cups } = require("../models");
+const { Cup } = require("../models");
 
 const cupdata = [
   {
@@ -178,6 +178,6 @@ const cupdata = [
   },
 ];
 
-const seedCups = () => cups.bulkCreate(cupdata);
+const seedCups = () => Cup.bulkCreate(cupdata);
 
 module.exports = seedCups;
