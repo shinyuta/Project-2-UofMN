@@ -15,8 +15,8 @@ Launch.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        launch_date: {
-            type: DataTypes.STRING,
+        launchDate: {
+            type: DataTypes.DATE,
             allowNull: false,
         },
 
@@ -26,7 +26,7 @@ Launch.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'launches',
+        modelName: 'Launch',
       }
 );
 
