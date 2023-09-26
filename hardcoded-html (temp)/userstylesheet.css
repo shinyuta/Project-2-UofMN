@@ -446,24 +446,28 @@ header .search {
 .mug-cards {
     width: auto;
     height: auto;
-    display: flex;
+    display: grid;
     align-items: center;
+    max-width: 95%;
+    grid-template-columns: 300px 300px;
 }
 
 .mug {
-    width: 50%;
+    width: 300px;
     height: auto;
     margin: 10px;
-} 
+    scale: 90%;
+}  
 
 /* switch to 1 per line at 800px width */
-
-@media (max-width: 800px) {
+ 
+@media (max-width: 1000px) {
     #user-cups {
         align-items: center;
     }
     
     .mug {
+        scale: 100%;
         width: 300px;
         margin: 1rem;
         border-radius: 8px;
@@ -481,5 +485,5 @@ header .search {
         margin-top: 1rem;
         justify-content: center;
     }
-}
+} 
 
