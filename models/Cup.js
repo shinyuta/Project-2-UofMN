@@ -1,14 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class User extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
-}
+class Cup extends Model {}
 
-User.init(
+Cup.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -16,39 +11,49 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    username: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    email: {
+    type: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
+    },
+    size: {
+        type: DataTypes.INTEGER,
+        allowNull:false,
+    },
+    image: {
+        type: DataTypes.BLOB,
+        allowNull: true,
+    },
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    launch: {
+      type: DataTypes.STRING,
+      references: {
+        model: 'launches',
+        key: 'id',
       },
     },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [6],
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
       },
     },
+
   },
   {
-    hooks: {
-      async beforeCreate(newUserData) {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
-      },
-    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'cup',
   }
 );
 
-module.exports = User;
+module.exports = Cup;

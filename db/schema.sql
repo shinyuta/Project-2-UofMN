@@ -1,0 +1,6 @@
+-- DROP DATABASE
+DROP DATABASE IF EXISTS starbucksCups_db;
+
+-- CREATE DATABASE
+CREATE DATABASE starbucksCups_db;
+

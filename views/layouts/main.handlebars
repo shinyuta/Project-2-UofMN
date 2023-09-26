@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="indexstylesheet.css">
+    <link rel="stylesheet" href="../../public/css/style.css">
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <!-- font -->
@@ -17,11 +17,6 @@
 </head>
 
 <body>
-    <!-- original search, replacing with below search function -->
-    <!-- <div class="search-wrap">
-        <label for="search"> Search Mugs/Cups </label>
-        <input type="search" id="search" data-search>
-    </div> -->
 
     <header> 
         <a href ="#"> <img src = "../images/logo.png" class = "logo"> </a>
@@ -30,7 +25,11 @@
                 <li> <a href = "#"> HOME </a></li>
                 <li> <a href = "#"> ABOUT </a></li>
                 <li> <a href = "#"> CONTACT </a></li>
+                {{#if !loginedIn}}
                 <li> <a href = "#"> LOGIN </a></li>
+                {{ else }}
+                <li> <a href = "#"> LOGOUT </a></li>
+                {{/if}}
             </ul>
             <div class = "search">
                 <span class ="icon"> 
@@ -44,37 +43,11 @@
             </div>
     </header>
 
-    <!-- ORIGINAL CODE, USED IN JS TEMPLATE BELOW -->
-    <!-- <main id="mug-cards"> 
-
-        <div class="mug">
-            <img src="https://imgs.search.brave.com/QIfbxrGs2D-p3_R1EfnfOuyz9rMgtqJs396WCx360c8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFBcld1bi1xdUwu/anBn"
-                alt="image">
-        
-        
-            <div class="mug-info">
-                <h3 class="header">Mug Name</h3>
-                <span class="price">$price</span>
-            </div>
-        
-            <div class="mug-body">
-                <a href="#" class="username"> Username </a>
-                <p class="mug-desc">Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Impedit, beatae ipsum.
-                    Deserunt rerum fugiat eius quis vitae sed sunt quibusdam?
-                </p>
-            </div>
-        </div>
-
-    </main> -->
-
     <div class = "mug-container" data-mug-cards-container></div>
-
     <template data-user-template>
         <div class="mug">
             <img src="https://imgs.search.brave.com/QIfbxrGs2D-p3_R1EfnfOuyz9rMgtqJs396WCx360c8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFBcld1bi1xdUwu/anBn"
                 alt="image">
-        
         
             <div class="mug-info">
                 <h3 class="header" data-header></h3>
@@ -93,36 +66,7 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <!-- buttons, navbar, header. -->
-    <script> 
-        let searchBtn = document.querySelector('.searchBtn')
-        let closeBtn = document.querySelector('.closeBtn')
-        let searchBox = document.querySelector('.searchBox')
-        let navigation = document.querySelector('.navigation')
-        let menuToggle = document.querySelector('.menuToggle')
-        let header = document.querySelector('header')
-
-        searchBtn.onclick = function(){
-            searchBox.classList.add('active')
-            closeBtn.classList.add('active')
-            searchBtn.classList.add('active')
-            menuToggle.classList.add('hide')
-            header.classList.remove('open')
-        }     
-
-        closeBtn.onclick = function(){
-            searchBox.classList.remove('active')
-            closeBtn.classList.remove('active')
-            searchBtn.classList.remove('active')
-            menuToggle.classList.remove('hide')
-        }     
-
-        menuToggle.onclick = function() {
-            header.classList.toggle('open')
-            searchBox.classList.remove('active')
-            closeBtn.classList.remove('active')
-            searchBtn.classList.remove('active')
-        }
-    </script>
+    <script src="../../public/js/app.js"></script>
 
 </body>
 
