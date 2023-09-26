@@ -413,6 +413,14 @@ header .search {
     font-size: 13;
 }
 
+.profile button.addPost {
+    border-radius: 10px;
+}
+
+.addPostImg {
+    scale: 120%;
+}
+
 .profile button:hover {
     box-shadow: 0 0 20px #00b87a;
     transition: 1s;
@@ -486,4 +494,6 @@ header .search {
         justify-content: center;
     }
 } 
+
+
 
