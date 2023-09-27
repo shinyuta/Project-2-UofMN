@@ -23,12 +23,12 @@ router.get('/', async (req, res) => {
     );
 
 
-    res.render('cup', {
+    res.render('cups', {
       cups,
-      logged_in: req.session.logged_in,
+      // logged_in: req.session.logged_in,
     });
     // res.json(cupData)
-    res.status(200).json(cups)
+    // res.status(200).json(cups)
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

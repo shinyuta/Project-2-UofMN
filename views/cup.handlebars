@@ -6,19 +6,21 @@
         {{#each cups as |cup|}}
         <div class="mug-cards">
             <div class="mug">
-                <img src="https://imgs.search.brave.com/QIfbxrGs2D-p3_R1EfnfOuyz9rMgtqJs396WCx360c8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFBcld1bi1xdUwu/anBn"
-                    alt="image">
+                {{!-- <img src="https://imgs.search.brave.com/QIfbxrGs2D-p3_R1EfnfOuyz9rMgtqJs396WCx360c8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFBcld1bi1xdUwu/anBn"
+                    alt="image"> --}}
+                <img src="/images/{{Cup.filename}}">
             
                 <div class="mug-info">
-                    <h3 class="header">{{cupdata.name}}</h3>
+                    <h3 class="header">{{Cup.name}}</h3>
                     {{!-- saw there is no price created for cups on backend --}}
                     <span class="price">$price</span>
                 </div>
             
                 <div class="mug-body">
-                    <a href="#" class="username"> {{userData.username}} </a>
-                    <p class="mug-desc">{{cupdata.type}}
+                    <a href="#" class="username"> {{User.username}} </a>
+                    <p class="mug-desc">{{Cup.type}}
                     </p>
                 </div>
+            </div>
         </div>
     </div>
