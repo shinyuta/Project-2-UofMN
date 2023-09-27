@@ -8,11 +8,11 @@ router.get('/', async (req, res) => {
   try {
     const cupData = await Cup.findAll({
       include: [
-        // {model: User, 
-        //      attributes: ['username']
-        //   },
+        {model: User, 
+             attributes: ['username']
+          },
         {model: Launch,
-            attributes: ['name']
+            attributes: ['name','id', 'launchDate'],
         },
       ],
       
@@ -45,6 +45,7 @@ router.get('/cup/:id' , async (req, res) => {
   try {
   const dbCupData = await Cup.findByPk(req.params.id);
 
+  // some issue with get here
   const cup = dbCupData.get({ plain: true });
 
   res.render('onecup', { cup });

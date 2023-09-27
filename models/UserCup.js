@@ -1,3 +1,5 @@
+// with help from prof trey eckels
+
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 

@@ -16,7 +16,7 @@ dataSearch.addEventListener("input", e => {
         user.element.classList.toggle("hide", !isVisible)
     })
 })
-
+//  this is what needs to be replaced?
 fetch("https://jsonplaceholder.typicode.com/users")
     .then(res => res.json())
     .then(data => {
