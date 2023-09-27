@@ -8,9 +8,9 @@ router.get('/', async (req, res) => {
   try {
     const cupData = await Cup.findAll({
       include: [
-        {model: User, 
-             attributes: ['username']
-          },
+        // {model: User, 
+        //      attributes: ['username']
+        //   },
         {model: Launch,
             attributes: ['name']
         },
@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
     );
 
 
-    res.render('cups', {
+    res.render('cup', {
       cups,
       // logged_in: req.session.logged_in,
     });
@@ -42,22 +42,36 @@ router.get('/', async (req, res) => {
 router.get('/cup/:id' , async (req, res) => {
   // If the user is not logged in, redirect the user to the login page
   // If the user is logged in, allow them to view one cup
-    try {
-      const cupData = await Cup.findByPk(req.params.id ,{ 
-        include: [
-          {model:Launch, attributes:['name', 'launch_date']},
-          {model: User, attributes: ['username','email']}
-        ]
-      });
-      const cups = cupData.get({ plain: true });
+  try {
+  const dbCupData = await Cup.findByPk(req.params.id);
 
-      res.status(200).json(cups)
-      // res.render('homepage', { cups, loggedIn: req.session.loggedIn });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
+  const cup = dbCupData.get({ plain: true });
+
+  res.render('onecup', { cup });
+  } catch (err) {
+  console.log(err);
+  res.status(500).json(err);
+}
 });
+    // try {
+    //   const cupData = await Cup.findByPk(req.params.id ,{ 
+    //     include: [
+    //       {model:Launch, attributes:['name', 'launch_date']},
+    //       {model: User, attributes: ['username','email']}
+    //     ]
+    //   });
+    //   const cups = cupData.get({ plain: true });
+
+    //   res.render('cup', {
+    //     cups,});
+
+    //   // res.status(200).json(cups)
+    //   // res.render('homepage', { cups, loggedIn: req.session.loggedIn });
+    // } catch (err) {
+    //   console.log(err);
+    //   res.status(500).json(err);
+    // }
+// });
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {

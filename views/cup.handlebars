@@ -3,11 +3,10 @@
     
     {{#if cups.length}}
     <div id ='user-cups'>
-        {{#each cups as |cup|}}
+        {{#each cups as |Cup|}}
         <div class="mug-cards">
             <div class="mug">
-                {{!-- <img src="https://imgs.search.brave.com/QIfbxrGs2D-p3_R1EfnfOuyz9rMgtqJs396WCx360c8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFBcld1bi1xdUwu/anBn"
-                    alt="image"> --}}
+                
                 <img src="/images/{{Cup.filename}}">
             
                 <div class="mug-info">
@@ -24,3 +23,5 @@
             </div>
         </div>
     </div>
+    {{/each}}
+{{/if}}
