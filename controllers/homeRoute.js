@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
     );
 
 
-    res.render('index', {
+    res.render('cup', {
       cups,
       logged_in: req.session.logged_in,
     });
@@ -71,11 +71,27 @@ router.get('/login', (req, res) => {
 // Get's user's cups and all the cups data
 router.get('/userCups/:id' , async (req,res) => {
   try {
-    const userData = await  User.findByPk(req.params.id, {include: {all: true, nested: true}})
+    const userData = await  User.findByPk(req.params.id, {include: [
+      {
+        model:Cup,
+        attributes: [
+          'name',
+          'filename',
+          'launch'
+        ],
+      },
+    ],
+    });
+
+      // {all: true, nested: true}});
+
+    const user = userData.get({ plain:true});
+
+    res.render('user', {user});
 
     // const userCups =  await userData.map((allData) => {allData.get({force:true})});
 
-    res.status(200).json(userData);
+    // res.status(200).json(userData);
     // res.render('users', {userCups});
 
   } catch (err) {
