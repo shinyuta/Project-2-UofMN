@@ -13,6 +13,8 @@ contactForm.addEventListener('submit', (e) => {
         subject: subject.value,
         message: message.value
     }
+    console.log(form);
+
     fetch('/', {
         method: 'POST',
         headers: {

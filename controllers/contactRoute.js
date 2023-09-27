@@ -6,14 +6,14 @@ const withAuth = require('../middleware/withAuth');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
-app.get('/contact', (req,res)=>{
+router.get('/contact', (req,res)=>{
     res.render('main', { 
         layout: 'contact', 
         // logged_in: req.session.logged_in 
       });
 })
 
-app.post('/contact', (req,res)=>{
+router.post('/contact', (req,res)=>{
 
     // defining our transporter which will use gmail while passing our credentials which are located elsewhere in our project
     const transporter = nodemailer.createTransport({
