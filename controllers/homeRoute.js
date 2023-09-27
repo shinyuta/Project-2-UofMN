@@ -1,7 +1,6 @@
 const router = require('express').Router();
-const { Cup, Launch , User} = require('../models/index');
+const { Cup, Launch , User, UserCup} = require('../models/index');
 const withAuth =  require('../middleware/withAuth');
-const { json } = require('sequelize');
 
 
 // GET all Cups for homepage
@@ -24,11 +23,10 @@ router.get('/', async (req, res) => {
     );
 
 
-    // res.render('homepage', {
-    //   cups,
-    //   loggedIn: req.session.loggedIn,
-      
-    // });
+    res.render('index', {
+      cups,
+      logged_in: req.session.logged_in,
+    });
     // res.json(cupData)
     res.status(200).json(cups)
   } catch (err) {
@@ -48,12 +46,13 @@ router.get('/cup/:id' , async (req, res) => {
       const cupData = await Cup.findByPk(req.params.id ,{ 
         include: [
           {model:Launch, attributes:['name', 'launch_date']},
+          {model: User, attributes: ['username','email']}
         ]
       });
       const cups = cupData.get({ plain: true });
 
-      // res.status(200).json(cupData)
-      res.render('homepage', { cups, loggedIn: req.session.loggedIn });
+      res.status(200).json(cups)
+      // res.render('homepage', { cups, loggedIn: req.session.loggedIn });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
@@ -61,7 +60,7 @@ router.get('/cup/:id' , async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/');
     return;
   }
@@ -77,7 +76,7 @@ router.get('/userCups/:id' , async (req,res) => {
     // const userCups =  await userData.map((allData) => {allData.get({force:true})});
 
     res.status(200).json(userData);
-    // res.render('login', {userCups});
+    // res.render('users', {userCups});
 
   } catch (err) {
     console.log(err);
