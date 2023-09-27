@@ -61,7 +61,7 @@ const cupdata = [
     name: "Yiqiao Wang cold cup",
     type: "coldcup",
     size: 24,
-    filename: 'Yiqiao-Wang-cold-cup.jpg',
+    filename: 'images/summerSipsLaunch/Yiqiao-Wang-cold-cup.jpg',
     launch: 1
   },
   {
