@@ -12,7 +12,10 @@
     font-family: 'Raleway', sans-serif;
     box-sizing: border-box;
 }
-
+img {
+    max-width: 100%;
+    height: auto;
+  }
 
 /* SEARCH AND CARDS */
 main {
@@ -33,7 +36,9 @@ main {
 }
 
 .mug-img {
-    width: 100%;
+    max-width: 200%;
+    height: auto;
+    width: auto;
 }
 
 .mug-info {
