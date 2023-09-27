@@ -3,15 +3,15 @@ const { Launch } = require("../models");
 const launchData = [
   {
     name: "summerSips",
-    launch_date: "June 27, 2023",
+    launchDate: "June 27, 2023",
   },
   {
     name: "summerVibes",
-    launch_date: "July 17, 2023",
+    launchDate: "July 17, 2023",
   },
   {
     name: "hallowen",
-    launch_date: "September 12, 2023",
+    launchDate: "September 12, 2023",
   },
 ];
 

@@ -3,10 +3,10 @@ const User = require('./User');
 const Launch = require('./Launch');
 const UserCup = require('./UserCup');
 
-
-Launch.hasMany(Cup, {
-  foreignKey: 'launch_id'
-});
+// dont need this
+// Launch.hasMany(Cup, {
+//   foreignKey: 'launch_id'
+// });
 
 Cup.hasOne(Launch,{
   foreignKey: 'launch_id'

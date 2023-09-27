@@ -31,10 +31,10 @@ Cup.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    launchDate: {
+    launch: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'launches',
+        model: 'Launch',
         key: 'id',
       },
     },
