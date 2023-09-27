@@ -8,9 +8,9 @@ router.get('/', async (req, res) => {
   try {
     const cupData = await Cup.findAll({
       include: [
-        {model: User, 
-             attributes: ['username']
-          },
+        // {model: User, 
+        //      attributes: ['username']
+        //   },
         {model: Launch,
             attributes: ['name']
         },
@@ -23,12 +23,12 @@ router.get('/', async (req, res) => {
     );
 
 
-    res.render('home', {
+    res.render('cup', {
       cups,
-      logged_in: req.session.logged_in,
+      // logged_in: req.session.logged_in,
     });
     // res.json(cupData)
-    res.status(200).json(cups)
+    // res.status(200).json(cups)
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -42,22 +42,36 @@ router.get('/', async (req, res) => {
 router.get('/cup/:id' , async (req, res) => {
   // If the user is not logged in, redirect the user to the login page
   // If the user is logged in, allow them to view one cup
-    try {
-      const cupData = await Cup.findByPk(req.params.id ,{ 
-        include: [
-          {model:Launch, attributes:['name', 'launch_date']},
-          {model: User, attributes: ['username','email']}
-        ]
-      });
-      const cups = cupData.get({ plain: true });
+  try {
+  const dbCupData = await Cup.findByPk(req.params.id);
 
-      res.status(200).json(cups)
-      // res.render('homepage', { cups, loggedIn: req.session.loggedIn });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
+  const cup = dbCupData.get({ plain: true });
+
+  res.render('onecup', { cup });
+  } catch (err) {
+  console.log(err);
+  res.status(500).json(err);
+}
 });
+    // try {
+    //   const cupData = await Cup.findByPk(req.params.id ,{ 
+    //     include: [
+    //       {model:Launch, attributes:['name', 'launch_date']},
+    //       {model: User, attributes: ['username','email']}
+    //     ]
+    //   });
+    //   const cups = cupData.get({ plain: true });
+
+    //   res.render('cup', {
+    //     cups,});
+
+    //   // res.status(200).json(cups)
+    //   // res.render('homepage', { cups, loggedIn: req.session.loggedIn });
+    // } catch (err) {
+    //   console.log(err);
+    //   res.status(500).json(err);
+    // }
+// });
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
@@ -71,11 +85,28 @@ router.get('/login', (req, res) => {
 // Get's user's cups and all the cups data
 router.get('/userCups/:id' , async (req,res) => {
   try {
-    const userData = await  User.findByPk(req.params.id, {include: {all: true, nested: true}})
+    const userData = await  User.findByPk(req.params.id, {
+      include: [
+      {
+        model:Cup,
+        attributes: [
+          'name',
+          'filename',
+          'launch'
+        ],
+      },
+    ],
+    });
+
+      // {all: true, nested: true}});
+
+    const user = userData.get({ plain:true });
+
+    res.render('user', {user});
 
     // const userCups =  await userData.map((allData) => {allData.get({force:true})});
 
-    res.status(200).json(userData);
+    // res.status(200).json(userData);
     // res.render('users', {userCups});
 
   } catch (err) {
@@ -83,4 +114,31 @@ router.get('/userCups/:id' , async (req,res) => {
     res.status(400).json(err);
   }
 })
+
+router.get('/users', async (req, res) => {
+  try {
+    const dbUserData = await User.findAll({
+      include: [
+        {
+          model: Cup,
+          attributes: ['filename', 'name'],
+          // model: UserCup,
+          // attributes: ['user_id', 'cup_id', 'id'],
+        },
+      ],
+    });
+
+    const users = dbUserData.map((User) =>
+    User.get({ plain: true })
+    );
+
+    res.render('user', {
+      users,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
