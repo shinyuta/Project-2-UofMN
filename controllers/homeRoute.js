@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
     );
 
 
-    res.render('index', {
+    res.render('home', {
       cups,
       logged_in: req.session.logged_in,
     });

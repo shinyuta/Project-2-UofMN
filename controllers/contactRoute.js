@@ -1,18 +1,19 @@
 const express = require('express');
+const router = require('express').Router();
 const app = express();
-const { Project, User } = require('../models');
+const { User } = require('../models');
 const withAuth = require('../middleware/withAuth');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
-app.get('/contact', withAuth, (req,res)=>{
-    res.render('contact', { 
-        layout: 'main', 
-        logged_in: req.session.logged_in 
+app.get('/contact', (req,res)=>{
+    res.render('main', { 
+        layout: 'contact', 
+        // logged_in: req.session.logged_in 
       });
 })
 
-app.post('/contact', withAuth, (req,res)=>{
+app.post('/contact', (req,res)=>{
 
     // defining our transporter which will use gmail while passing our credentials which are located elsewhere in our project
     const transporter = nodemailer.createTransport({
@@ -22,6 +23,8 @@ app.post('/contact', withAuth, (req,res)=>{
             pass: process.env.Password
         }
     })
+
+    // object that contains a to and from addressee with the message and title of the email. 
     const mailOptions = {
         from: req.body.email,
         to: process.env.Email,
