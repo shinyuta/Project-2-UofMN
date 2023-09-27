@@ -18,7 +18,8 @@ const UserCupData = [
 {
     user_id:1,
     cup_id:10
-
+},
+{
     user_id:1,
     cup_id: 4
 },
