@@ -7,8 +7,8 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 router.get('/contact', (req,res)=>{
-    res.render('main', { 
-        layout: 'contact', 
+    res.render('contact', { 
+        layout: 'main', 
         // logged_in: req.session.logged_in 
       });
 })
