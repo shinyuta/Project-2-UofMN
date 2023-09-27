@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { Cup, Launch , User, UserCup} = require('../models/index');
 const withAuth =  require('../middleware/withAuth');
 
-
 // GET all Cups for homepage
 router.get('/', async (req, res) => {
   try {
@@ -22,7 +21,6 @@ router.get('/', async (req, res) => {
       cups.get({ plain: true })
     );
 
-
     res.render('index', {
       cups,
       logged_in: req.session.logged_in,
@@ -35,11 +33,9 @@ router.get('/', async (req, res) => {
   }
 });
 
-// write a get route for users to get all assoiated cups
-
 
 // GET one Cup
-router.get('/cup/:id' , async (req, res) => {
+router.get('/cup/:id' , withAuth , async (req, res) => {
   // If the user is not logged in, redirect the user to the login page
   // If the user is logged in, allow them to view one cup
     try {
@@ -59,17 +55,10 @@ router.get('/cup/:id' , async (req, res) => {
     }
 });
 
-router.get('/login', (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect('/');
-    return;
-  }
 
-  res.render('login');
-});
 
 // Get's user's cups and all the cups data
-router.get('/userCups/:id' , async (req,res) => {
+router.get('/userCups/:id' , withAuth , async (req,res) => {
   try {
     const userData = await  User.findByPk(req.params.id, {include: {all: true, nested: true}})
 
@@ -83,4 +72,19 @@ router.get('/userCups/:id' , async (req,res) => {
     res.status(400).json(err);
   }
 })
+
+
+router.get('/login', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
+});
+
+
+
+
+
 module.exports = router;
