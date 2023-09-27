@@ -19,13 +19,13 @@
 <body>
 
     <header> 
-        <a href ="#"> <img src = "../images/logo.png" class = "logo"> </a>
+        <a href ="#"> <img src = "../../public/images/logo.png" class = "logo"> </a>
         <div class = "nav-group">
             <ul class = "navigation"> 
                 <li> <a href = "#"> HOME </a></li>
                 <li> <a href = "#"> ABOUT </a></li>
                 <li> <a href = "#"> CONTACT </a></li>
-                {{#if !loginedIn}}
+                {{#if !loggedIn}}
                 <li> <a href = "#"> LOGIN </a></li>
                 {{ else }}
                 <li> <a href = "#"> LOGOUT </a></li>
@@ -43,23 +43,7 @@
             </div>
     </header>
 
-    <div class = "mug-container" data-mug-cards-container></div>
-    <template data-user-template>
-        <div class="mug">
-            <img src="https://imgs.search.brave.com/QIfbxrGs2D-p3_R1EfnfOuyz9rMgtqJs396WCx360c8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFBcld1bi1xdUwu/anBn"
-                alt="image">
-        
-            <div class="mug-info">
-                <h3 class="header" data-header></h3>
-                <span class="price">$price</span>
-            </div>
-        
-            <div class="mug-body">
-                <a href="#" class="username"> Username </a>
-                <p class="mug-desc" data-body></p>
-            </div>
-        </div>
-    </template>
+    {{{ body }}}
 
     <!-- icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
