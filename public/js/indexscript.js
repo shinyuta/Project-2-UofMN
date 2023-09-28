@@ -20,7 +20,7 @@ dataSearch.addEventListener("input", e => {
 fetch("https://jsonplaceholder.typicode.com/users")
     .then(res => res.json())
     .then(data => {
-        console.log('here is the data', data);
+        // console.log('here is the data', data);
         users = data.map(user => {
             const card = mugCardTemplate.content.cloneNode(true).children[0]
             const header = card.querySelector("[data-header]")
