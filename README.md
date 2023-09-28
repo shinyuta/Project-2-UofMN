@@ -1,5 +1,5 @@
 
-![logo](https://github.com/shinyuta/Project-2-UofMN/blob/main/logo.png?raw=true)
+![logo](https://github.com/shinyuta/Project-2-UofMN/blob/HTML-CSS-JS/logo.png?raw=true)
 
 
 # Starby's Cup Corner
