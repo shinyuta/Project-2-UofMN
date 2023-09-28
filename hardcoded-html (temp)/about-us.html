@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="about-usstylesheet.css">
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <!-- font -->
@@ -12,16 +12,11 @@
     <!-- font -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Comment back in FIX overlapping issue-->
-    <!-- <script src="indexscript.js" defer></script> -->
+    <script src="indexscript.js" defer></script>
     <title>Starby's Cup Corner</title>
 </head>
 
 <body>
-    <!-- original search, replacing with below search function -->
-    <!-- <div class="search-wrap">
-        <label for="search"> Search Mugs/Cups </label>
-        <input type="search" id="search" data-search>
-    </div> -->
 
     <header> 
         <a href ="#"> <img src = "../images/logo.png" class = "logo"> </a>
@@ -44,43 +39,35 @@
             </div>
     </header>
 
-    <div class = "center">
-        <h1>Sign Up</h1>
-        <form method = "post"> 
-            <div class="text-field-signup">
-                <input type="text" required>
-                <span></span>
-                <label>First Name</label>
+    <section class = "about-us">
+        <div class="about-us-container">
+            <img src = "../images/about-us.png">
+            <div class ="about-us-text"> 
+                <h1>About Us</h1>
+                <h4>About the  <span>Starby's Cup Corner team!</span></h4>
+                <p> We are a group of 4 learning to code! We created this site as our second project for the U of MN Coding Bootcamp!
+                    This page was made by Yuta Kirihara, Alex Lara, Alex Strunk, and Gabriel Valasquez. Check us out on our respective github pages!
+                </p>
+                <div class="button-container">
+                    <a href = "https://github.com/shinyuta">
+                        <button type="button" class= "Github"><ion-icon name="logo-github"></ion-icon> Yuta K.</button>
+                    </a>
+                    <a href="https://github.com/PsychoRSS">
+                        <button type="button" class= "Github"><ion-icon name="logo-github"></ion-icon> Alex L.</button>
+                    </a>
+                    <a href="https://github.com/astrunk87">
+                    <button type="button" class= "Github"><ion-icon name="logo-github"></ion-icon> Alex S.</button>
+                    </a>
+                    <a href="https://github.com/Gabe-Velasquez">
+                        <button type="button" class= "Github"><ion-icon name="logo-github"></ion-icon> Gabe V.</button>
+                    </a>
+                </div>
             </div>
-            <div class="text-field-signup">
-                <input type="text" required>
-                <span></span>
-                <label>Last Name</label>
-            </div>
-            <div class="text-field-signup">
-                <input type="text" required>
-                <span></span>
-                <label>User Name</label>
-            </div>
-            <div class="text-field-signup">
-                <input type="password" required>
-                <span></span>
-                <label>Password</label>
-            </div>
-            <div class="text-field-signup">
-                <input type="password" required>
-                <span></span>
-                <label>Confirm Password</label>
-            </div>
-            <div class="terms-privacy-div">By clicking the Sign Up button you agree to our <a href='#' class = terms-privacy>Terms and Conditions</a>
-            and <a href='#' class = terms-privacy>Privacy Policy</a>
-            </div>
-            <input type="submit" value="Sign Up">
-            <div class="signup">
-                Already a Member? <a href ="#">Login</a>
-            </div>
-        </form>
-    </div>
+        </div>
+    </section>
+
+    <div class = "mug-container" data-mug-cards-container></div>
+
     <!-- icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

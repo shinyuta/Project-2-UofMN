@@ -4,11 +4,11 @@
     {{#if cups.length}}
     <div id ='user-cups'>
         {{#each cups as |Cup|}}
-        <div style='display: flex; ' class="mug-cards">
-            <div style='display: flex; flex-wrap:wrap' class="mug">
-                <div class="mug-img">
-                <img style ='width: 150px'src="/images/{{Cup.filename}}">
-                </div>
+        <div class="mug-cards">
+            <div class="mug">
+                {{!-- <div class="mug-img"> --}}
+                <img src="/images/{{Cup.filename}}">
+                {{!-- </div> --}}
                 <div class="mug-info">
                     <h3 class="header">{{Cup.name}}</h3>
                     <p>{{Launch.launchDate}}</p>

@@ -1,39 +1,41 @@
-# Project 2 UofMN
-### Project #2 for the UMN Fullstack Bootcamp.
 
-#### Requirements:
-- must use node.js and express.js to create a restful API
-- must use handlebars.js as the template engine
-- must use MySQL and the Sequelize ORM for the Database
-- must have both GET and POST routes for retrieving and adding new data
-- must use at least one new library, package, or technology that we haven't discussed
-- must have a folder structure that meets the MVC paradigm
-- must include authentication
-- must protect API keys
+![logo](https://i.imgur.com/cBCVPBu.png)
 
-#### Others
-- Heroku Deployment
-- Polished UI
-- Responsive
-- Interactive
-- Good-quality coding standards
-- Professional ReadMe
 
-#### Presentations:
-- Overall concept
-- motivation
-- design process
-- tech used
-- demo
-- directions for future dev
-- sometimes, talking intelligently about tech > doing tech
+# Starby's Cup Corner
 
-#### Assessment:
-1. concept
-2. design
-3. functionality 
-4. repo quality
-5. app quality
-6. collaboration
+This project was created for project #2 in the u of mn fullstack coding bootcamp (summer-fall 2023).
 
-*Can use 3rd party apis with data as well*
+The purpose of this web application is to allow users to create an account, search for Starbucks™ cups that other user's are selling and also allow users to post their own cups.
+
+We used a variety of technology from HTML-CSS-JS to Express and Handlebars.
+
+
+
+
+## 🚀 About Us
+We are a group of 4 learning to code! We created this site as our second project for the U of MN Coding Bootcamp! This page was made by Yuta Kirihara, Alex Lara, Alex Strunk, and Gabriel Valasquez. Check us out on our respective github pages!
+
+
+## Authors
+
+- Yuta Kirihara - [@shinyuta](https://github.com/shinyuta)
+- Alex Lara - [@psychorss](https://github.com/PsychoRSS)
+- Alex Strunk - [@astrunk87](https://github.com/astrunk87)
+- Gabe Valasquez - [@gabe-velasquez](https://github.com/Gabe-Velasquez)
+
+## Demo
+
+![Search](https://i.imgur.com/ajUCNZ2.png)
+
+
+![About Us](https://i.imgur.com/GV4tIsD.png)
+
+
+
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
