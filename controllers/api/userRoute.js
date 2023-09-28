@@ -4,8 +4,8 @@ const withAuth = require('../../middleware/withAuth')
 
 
 //get request that routes to handlebar template 
-router.get('/user', (req, res) => {
-  res.render('user', {
+router.get('/login', (req, res) => {
+  res.render('login', {
       layout: 'main',
       // logged_in: req.session.logged_in 
   });
