@@ -1,4 +1,3 @@
-window.alert('meow');
 
 let searchBtn = document.querySelector('.searchBtn')
 let closeBtn = document.querySelector('.closeBtn')

@@ -32,7 +32,7 @@ router.post('/contact', (req, res) => {
         from: req.body.email,
         to: process.env.EMAIL_USERNAME,
         subject: `${req.body.email} has sent us a message! ${req.body.subject}`,
-        text: req.body.message
+        text: `${req.body.name} says: ${req.body.message}`
     };
     
     transporter.sendMail(mailOptions, (error, info) => {

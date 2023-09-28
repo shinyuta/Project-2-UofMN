@@ -1,4 +1,3 @@
-window.alert('hi');
 
 // let submitButton = document.querySelector('.submitButton');
 let contactForm = document.querySelector('.contact-form');
