@@ -242,10 +242,12 @@ header .search {
     left: 30px;
     top: 2px;
     transition: 0.5s ease-in-out;
+    color: var(--offwhite);
 }
 
 .searchBtn.active {
     left: 0;
+    color: var(--Main);
 }
 .closeBtn {
     opacity: 0;    
@@ -267,7 +269,7 @@ header .search {
 .menuToggle {
     position: relative;
     display: none;
-    
+    color: var(--offwhite);
 }
 
 @media (max-width: 750px) {
@@ -303,6 +305,7 @@ header .search {
         height: calc(100vh - 80px);
         padding: 40px;
         background-color: white;
+        z-index: 1;
     }
 
     header.open .navigation li {
@@ -472,3 +475,11 @@ header .search {
     
 }
 
+/* image in super small screen fix */
+@media (max-width: 420px) {
+    .about-us img {
+        height: auto;
+        width: 300px;
+        border-radius: 30px;
+    }
+}
