@@ -1,6 +1,6 @@
-
-![logo](https://i.imgur.com/cBCVPBu.png)
-
+<p align="center">
+  <img src="https://i.imgur.com/cBCVPBu.png"/>
+</p>
 
 # Starby's Cup Corner
 
@@ -15,15 +15,15 @@ We used a variety of technology from HTML-CSS-JS to Express and Handlebars.
 
 ## ☕️ About Us
 
-Welcome To Starby’s Cup Corner, The Ultimate Online Destination For Starbucks Coffee Cup Collectors And Enthusiasts. Whether You Are Looking For A Rare Vintage Mug, A Limited Edition Tumbler, Or A Personalized Gift, You Will Find It Here At Starby’s Cup Corner.
+Welcome to Starby’s Cup Corner, the ultimate online destination for Starbucks coffee cup collectors and enthusiasts. Whether you are looking for a rare vintage mug, a limited edition tumbler, or a personalized gift, you will find it here at Starby’s Cup Corner.
 
-We Are A Community Of Passionate Starbucks Fans Who Love To Share Our Stories, Tips, And Reviews About Our Favorite Coffee Cups. We Also Offer A Platform For Users To Buy And Sell Their Own Cups, As Well As Exchange Feedback And Advice With Other Members.
+We are a community of passionate Starbucks fans who love to share our stories, tips, and reviews about our favorite coffee cups. We also offer a platform for users to buy and sell their own cups, as well as exchange feedback and advice with other members.
 
-Our Mission Is To Connect Starbucks Lovers Around The World And Help Them Discover New And Exciting Ways To Enjoy Their Coffee. We Believe That Every Cup Has A Story, And We Want To Help You Tell Yours.
+Our mission is to connect Starbucks lovers around the world and help them discover new and exciting ways to enjoy their coffee. We believe that every cup has a story, and we want to help you tell yours.
 
-Join Us Today And Become Part Of The Starby’s Cup Corner Family. You Will Get Access To Exclusive Deals, Discounts, And Giveaways, As Well As The Opportunity To Meet Other Like-Minded People Who Share Your Passion.
+Join us today and become part of the Starby’s Cup Corner family. You will get access to exclusive deals, discounts, and giveaways, as well as the opportunity to meet other like-minded people who share your passion.
 
-Starby’s Cup Corner Is Not Affiliated With Or Endorsed By Starbucks Corporation. All Trademarks And Logos Are The Property Of Their Respective Owners.
+Starby’s Cup Corner is not affiliated with or endorsed by Starbucks Corporation. All trademarks and logos are the property of their respective owners.
 
 ## Authors
 
