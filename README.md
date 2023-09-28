@@ -1,5 +1,5 @@
 
-![logo](https://github.com/shinyuta/Project-2-UofMN/blob/HTML-CSS-JS/logo.png?raw=true)
+![logo](https://i.imgur.com/cBCVPBu.png)
 
 
 # Starby's Cup Corner
@@ -28,10 +28,10 @@ We are a group of 4 learning to code! We created this site as our second project
 
 ## Demo
 
-![Search](https://github.com/shinyuta/Project-2-UofMN/blob/main/demo1.png?raw=true)
+![Search](https://i.imgur.com/ajUCNZ2.png)
 
 
-![About Us](https://github.com/shinyuta/Project-2-UofMN/blob/main/demo2.png?raw=true)
+![About Us](https://i.imgur.com/GV4tIsD.png)
 
 
 
