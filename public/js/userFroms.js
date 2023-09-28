@@ -25,14 +25,16 @@ try {
 const signUpForm = async (event) => {
     try {
         event.preventDefault()
-        const email = await document.querySelector('email').value.trim();
-        const password = await document.querySelector('password').value.trim();
-        const username = await document.querySelector('username').value.trim
+        console.log("iwas here")
+        const first_name = await document.querySelector('#first_name').value.trim();
+        const last_name = await document.querySelector('#last_name').value.trim();
+        const password = await document.querySelector('#password').value.trim();
+        const username = await document.querySelector('#username').value.trim()
     
-        if (email && password && username ) {
-            const signUp = fetch('/api/users', {
+        if (first_name && last_name && password && username) {
+            const signUp = fetch('/api/users/', {
                 method: 'POST',
-                body: JSON.stringify({email, password, username}),
+                body: JSON.stringify({first_name, last_name, password, username}),
                 headers: {'Content-Type': 'application/json'},
             })
         
@@ -61,6 +63,7 @@ const logout = async () => {
   };
   
   document.querySelector('#logout').addEventListener('click', logout);
+  document.querySelector('#signup-form').addEventListener('submit', signUpForm)
   
 
 
