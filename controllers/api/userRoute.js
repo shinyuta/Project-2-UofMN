@@ -2,7 +2,16 @@ const router = require('express').Router();
 const { User } = require('../../models');
 const withAuth = require('../../middleware/withAuth')
 
-// CREATE new user
+
+//get request that routes to handlebar template 
+router.get('/user', (req, res) => {
+  res.render('user', {
+      layout: 'main',
+      // logged_in: req.session.logged_in 
+  });
+});
+
+
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create({
