@@ -28,12 +28,13 @@ We are a group of 4 learning to code! We created this site as our second project
 
 ![Search](https://i.imgur.com/ajUCNZ2.png)
 
-
 ![About Us](https://i.imgur.com/GV4tIsD.png)
 
+![login](https://i.imgur.com/fziEEkB.png)
 
+![signup](https://i.imgur.com/aRMgt6G.png)
 
-
+![user](https://i.imgur.com/rT2009J.png)
 
 ## License
 
