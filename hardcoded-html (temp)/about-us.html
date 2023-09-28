@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="about-usstylesheet.css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Comment back in FIX overlapping issue-->
+    <script src="indexscript.js" defer></script>
+    <title>Starby's Cup Corner</title>
+</head>
+
+<body>
+
+    <header> 
+        <a href ="#"> <img src = "../images/logo.png" class = "logo"> </a>
+        <div class = "nav-group">
+            <ul class = "navigation"> 
+                <li> <a href = "#"> HOME </a></li>
+                <li> <a href = "#"> ABOUT </a></li>
+                <li> <a href = "#"> CONTACT </a></li>
+                <li> <a href = "#"> LOGIN </a></li>
+            </ul>
+            <div class = "search">
+                <span class ="icon"> 
+                    <ion-icon name="search-outline" class = "searchBtn"></ion-icon>
+                    <ion-icon name="close-circle-outline" class = "closeBtn"></ion-icon>                
+                </span>
+            </div>
+            <ion-icon name="menu-outline" class="menuToggle"></ion-icon>
+            <div class="searchBox">
+                <input type="search" id= "search" placeholder="Find Your Dream Mug! ..." data-search>
+            </div>
+    </header>
+
+    <section class = "about-us">
+        <div class="about-us-container">
+            <img src = "../images/about-us.png">
+            <div class ="about-us-text"> 
+                <h1>About Us</h1>
+                <h4>About the  <span>Starby's Cup Corner team!</span></h4>
+                <p> We are a group of 4 learning to code! We created this site as our second project for the U of MN Coding Bootcamp!
+                    This page was made by Yuta Kirihara, Alex Lara, Alex Strunk, and Gabriel Valasquez. Check us out on our respective github pages!
+                </p>
+                <div class="button-container">
+                    <a href = "https://github.com/shinyuta">
+                        <button type="button" class= "Github"><ion-icon name="logo-github"></ion-icon> Yuta K.</button>
+                    </a>
+                    <a href="https://github.com/PsychoRSS">
+                        <button type="button" class= "Github"><ion-icon name="logo-github"></ion-icon> Alex L.</button>
+                    </a>
+                    <a href="https://github.com/astrunk87">
+                    <button type="button" class= "Github"><ion-icon name="logo-github"></ion-icon> Alex S.</button>
+                    </a>
+                    <a href="https://github.com/Gabe-Velasquez">
+                        <button type="button" class= "Github"><ion-icon name="logo-github"></ion-icon> Gabe V.</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class = "mug-container" data-mug-cards-container></div>
+
+    <!-- icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- buttons, navbar, header. -->
+    <script> 
+        let searchBtn = document.querySelector('.searchBtn')
+        let closeBtn = document.querySelector('.closeBtn')
+        let searchBox = document.querySelector('.searchBox')
+        let navigation = document.querySelector('.navigation')
+        let menuToggle = document.querySelector('.menuToggle')
+        let header = document.querySelector('header')
+
+        searchBtn.onclick = function(){
+            searchBox.classList.add('active')
+            closeBtn.classList.add('active')
+            searchBtn.classList.add('active')
+            menuToggle.classList.add('hide')
+            header.classList.remove('open')
+        }     
+
+        closeBtn.onclick = function(){
+            searchBox.classList.remove('active')
+            closeBtn.classList.remove('active')
+            searchBtn.classList.remove('active')
+            menuToggle.classList.remove('hide')
+        }     
+
+        menuToggle.onclick = function() {
+            header.classList.toggle('open')
+            searchBox.classList.remove('active')
+            closeBtn.classList.remove('active')
+            searchBtn.classList.remove('active')
+        }
+    </script>
+
+</body>
+
+</html>
