@@ -13,7 +13,7 @@ We used a variety of technology from HTML-CSS-JS to Express and Handlebars.
 
 
 
-## 🚀 About Us
+## ☕️ About Us
 
 Welcome To Starby’s Cup Corner, The Ultimate Online Destination For Starbucks Coffee Cup Collectors And Enthusiasts. Whether You Are Looking For A Rare Vintage Mug, A Limited Edition Tumbler, Or A Personalized Gift, You Will Find It Here At Starby’s Cup Corner.
 
