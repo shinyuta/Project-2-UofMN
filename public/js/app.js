@@ -1,3 +1,4 @@
+
 let searchBtn = document.querySelector('.searchBtn')
 let closeBtn = document.querySelector('.closeBtn')
 let searchBox = document.querySelector('.searchBox')
