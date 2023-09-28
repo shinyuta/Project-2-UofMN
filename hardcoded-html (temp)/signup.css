@@ -352,7 +352,6 @@ header .search {
 
 form .text-field {
     position: relative;
-    border-bottom: 2px solid --offwhite;
     margin: 40px 0;
 }
 

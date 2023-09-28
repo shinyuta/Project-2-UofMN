@@ -322,3 +322,153 @@ header .search {
     }
 
 }
+
+/* ABOUT US */
+
+.about-us {
+    width: 100%;
+    padding: 78px 0px;
+    margin-top: 60px;
+    background-color: var(--offwhite);
+}
+
+.about-us img {
+    height: auto;
+    width: 400px;
+    border-radius: 30px;
+}
+
+.about-us-text {
+    width: 500px;
+    margin-left: 30px;
+}
+
+.about-us-container {
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about-us-text h1 {
+    color: var(--Main);
+    font-size: 60px;
+    font-weight: 800;
+    margin-bottom: 0px;
+}
+
+.about-us-text h4 {
+    color: var(--Main);
+    font-size: 15px;
+    margin-top: 0px;
+}
+
+.about-us-text span {
+    color: var(--dark);
+    pointer-events: cursor;
+    text-decoration: none;
+}
+
+.about-us-text p {
+    letter-spacing: 1px;
+    line-height: 40px;
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+
+.button-container  {
+    text-align: center;
+}
+
+.button-container button {
+    color: var(--offwhite);
+    background-color: var(--dark);
+    text-decoration: none;
+    border: 4px solid transparent;
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 20px;
+    margin: 10px
+}
+
+.button-container button:hover {
+    color: var(--dark);
+    background-color: var(--offwhite);
+    border-color: var(--dark);
+    scale: 130%;
+    transition: 1s;
+}
+
+.button-container a {
+    text-decoration: none;
+}
+
+@media (max-width: 750px) {
+
+    .about-us {
+        width: 100%;
+        padding: 78px 0px;
+        margin-top: 60px;
+        background-color: var(--offwhite);
+        align-items: center;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .about-us img {
+        height: auto;
+        width: 400px;
+        border-radius: 30px;
+    }
+    
+    .about-us-text {
+        align-items: center;
+        text-align: center;
+        width: 95%; 
+        margin-left: 0px;
+    }
+    
+    .about-us-container {
+        width: 1130px;
+        max-width: 95%;
+        margin: 0 auto;
+        display: inline;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .about-us-text h1 {
+        color: var(--Main);
+        font-size: 60px;
+        font-weight: 800;
+        margin-bottom: 0px;
+    }
+    
+    .about-us-text h4 {
+        color: var(--Main);
+        font-size: 15px;
+        margin-top: 0px;
+    }
+    
+    .about-us-text span {
+        color: var(--dark);
+        pointer-events: cursor;
+        text-decoration: none;
+    }
+    
+    .about-us-text p {
+        letter-spacing: 1px;
+        line-height: 40px;
+        font-size: 15px;
+        margin-bottom: 50px;
+    }
+    
+    .button-container  {
+        text-align: center;
+    }
+    
+}
+
