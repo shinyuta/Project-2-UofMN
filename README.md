@@ -4,8 +4,6 @@
 
 # Starby's Cup Corner
 
-A brief description of what this project does and who it's for
-
 This project was created for project #2 in the u of mn fullstack coding bootcamp (summer-fall 2023).
 
 The purpose of this web application is to allow users to create an account, search for Starbucks™ cups that other user's are selling and also allow users to post their own cups.
