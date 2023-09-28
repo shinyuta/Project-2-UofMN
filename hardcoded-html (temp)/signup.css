@@ -354,12 +354,12 @@ header .search {
     color: var(--offwhite);
 }
 
-form .text-field {
+form .text-field-signup {
     position: relative;
     margin: 40px 0;
 }
 
-.text-field input {
+.text-field-signup input {
     width: 100%;
     padding: 0 8px;
     height: 40px;
@@ -369,7 +369,7 @@ form .text-field {
     border-radius: 20px;
 }
 
-.text-field label {
+.text-field-signup label {
     position: absolute;
     top: 50%;
     left: 5px;

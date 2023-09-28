@@ -12,12 +12,13 @@
     font-family: 'Raleway', sans-serif;
     box-sizing: border-box;
 }
+
 img {
     max-width: 100%;
     height: auto;
   }
 
-/* SEARCH AND CARDS */
+/* ------------------------ SEARCH AND CARDS ----------------------- */
 main {
     display:flex;
     flex-wrap: wrap;
@@ -35,10 +36,8 @@ main {
     overflow: hidden;
 }
 
-.mug-img {
-    max-width: 200%;
-    height: auto;
-    width: auto;
+.mug img {
+    width: 100%;
 }
 
 .mug-info {
@@ -111,6 +110,7 @@ input {
 }
 
 .mug-container {
+    transform: translateY(80px);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: .25rem;
@@ -127,7 +127,7 @@ input {
     display: none;
 } 
 
-/* NAV-BAR */
+/* ----------------------------- NAV-BAR ----------------------------- */
 
 body {
     min-height: 100vh;
@@ -247,11 +247,14 @@ header .search {
     left: 30px;
     top: 2px;
     transition: 0.5s ease-in-out;
+    color: var(--offwhite);
 }
 
 .searchBtn.active {
     left: 0;
+    color: var(--Main);
 }
+
 .closeBtn {
     opacity: 0;    
     position: relative;
@@ -272,7 +275,7 @@ header .search {
 .menuToggle {
     position: relative;
     display: none;
-    
+    color: var(--offwhite);
 }
 
 @media (max-width: 750px) {
@@ -308,6 +311,7 @@ header .search {
         height: calc(100vh - 80px);
         padding: 40px;
         background-color: white;
+        z-index: 1;
     }
 
     header.open .navigation li {
@@ -328,7 +332,7 @@ header .search {
 
 }
 
-/* USER PROFILE */
+/* ----------------- USER PROFILE --------------------- */
 
 /* change user navbar icon */
 .nav-user-icon {
@@ -336,6 +340,7 @@ header .search {
 }
 
 .user-container {
+    pointer-events: none;
     width: 100%;
     height: 100vh;
     transform: translateY(-30px);
@@ -343,6 +348,7 @@ header .search {
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .profile {
@@ -379,6 +385,7 @@ header .search {
 }
 
 .profile-bottom {
+    pointer-events: auto;
     background-color: #70472e;
     color: var(--offwhite);
     padding: 10px 0;
@@ -395,17 +402,20 @@ header .search {
 }
 
 .profile-bottom a {
+    pointer-events: auto;
     text-decoration: none;
     color: var(--offwhite);
     font-weight: 700;
 }
 
 .profile-bottom a:hover {
+    pointer-events: auto;
     text-shadow: 0 0 20px #f9c4a3;
     transition: 1s;
 }
 
 .profile button {
+    pointer-events: auto;
     background: var(--offwhite);
     color: var(--Main);
     border: none;
@@ -417,6 +427,14 @@ header .search {
     margin-bottom: 20px;
     font-weight: 600;
     font-size: 13;
+}
+
+.profile button.addPost {
+    border-radius: 10px;
+}
+
+.addPostImg {
+    scale: 120%;
 }
 
 .profile button:hover {
@@ -436,6 +454,7 @@ header .search {
 }
 
 .social-media ion-icon {
+    pointer-events: auto;
     width: 20px;
     cursor: pointer;
     margin-left: 5px;
@@ -448,8 +467,50 @@ header .search {
 }
 
 /* USER CUPS */
-#user-cups {
+/* USER CUPS */
+
+.mug-cards {
+    width: auto;
+    height: auto;
+    display: grid;
     align-items: center;
+    max-width: 95%;
+    grid-template-columns: 300px 300px;
+}
+
+.mug {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+    scale: 90%;
+}  
+
+/* switch to 1 per line at 800px width */
+ 
+@media (max-width: 1000px) {
+    #user-cups {
+        align-items: center;
+    }
+    
+    .mug {
+        scale: 100%;
+        width: 300px;
+        margin: 1rem;
+        border-radius: 8px;
+        box-shadow: 0.2px 4px 5px black;
+        background-color: var(--dark);
+        color: var(--offwhite);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mug-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: .25rem;
+        margin-top: 1rem;
+        justify-content: center;
+    }
 }
 
 
@@ -559,3 +620,257 @@ input[type="submit"]:hover {
     transition: .5s;
 }
 
+
+/* ------------------- SIGNUP FORM ------------------ */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background: var(--dark);
+    border-radius: 10px;
+}
+
+.center h1 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 3px solid white;
+    color: var(--offwhite);
+    font-size: 1.45em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.center form {
+    padding: 0 40px;
+    box-sizing: border-box;
+    color: var(--offwhite);
+}
+
+form .text-field-signup {
+    position: relative;
+    margin: 40px 0;
+}
+
+.text-field-signup input {
+    width: 100%;
+    padding: 0 8px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+}
+
+.text-field-signup label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: var(--offwhite);
+    font-size: 16px;
+    font-weight: 500;
+    transform: translate(10%, -220%);
+    pointer-events: none;
+}
+
+.terms-privacy-div {
+    margin: -5px 0 20px 5px;
+    color: var(--light);
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    border: 4px solid var(--dark);
+    border-radius: 30px;
+    background-color: var(--offwhite);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--Main);
+    cursor: pointer;
+    outline: none;
+}
+
+input[type="submit"]:hover {
+    border-color: #00b87a;
+    transition: .5s;
+}
+
+.signup {
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: var(--offwhite);
+}
+
+.signup a {
+    color: var(--offwhite);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+    color: #00b87a;
+    transition: .5s;
+}
+
+/* ------------------ ABOUT US ---------------------- */
+
+.about-us {
+    width: 100%;
+    padding: 78px 0px;
+    margin-top: 60px;
+    background-color: var(--offwhite);
+}
+
+.about-us img {
+    height: auto;
+    width: 400px;
+    border-radius: 30px;
+}
+
+.about-us-text {
+    width: 500px;
+    margin-left: 30px;
+}
+
+.about-us-container {
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about-us-text h1 {
+    color: var(--Main);
+    font-size: 60px;
+    font-weight: 800;
+    margin-bottom: 0px;
+}
+
+.about-us-text h4 {
+    color: var(--Main);
+    font-size: 15px;
+    margin-top: 0px;
+}
+
+.about-us-text span {
+    color: var(--dark);
+    pointer-events: cursor;
+    text-decoration: none;
+}
+
+.about-us-text p {
+    letter-spacing: 1px;
+    line-height: 40px;
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+
+.button-container  {
+    text-align: center;
+}
+
+.button-container button {
+    color: var(--offwhite);
+    background-color: var(--dark);
+    text-decoration: none;
+    border: 4px solid transparent;
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 20px;
+    margin: 10px
+}
+
+.button-container button:hover {
+    color: var(--dark);
+    background-color: var(--offwhite);
+    border-color: var(--dark);
+    scale: 130%;
+    transition: 1s;
+}
+
+.button-container a {
+    text-decoration: none;
+}
+
+@media (max-width: 750px) {
+
+    .about-us {
+        width: 100%;
+        padding: 78px 0px;
+        margin-top: 60px;
+        background-color: var(--offwhite);
+        align-items: center;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .about-us img {
+        height: auto;
+        width: 400px;
+        border-radius: 30px;
+    }
+    
+    .about-us-text {
+        align-items: center;
+        text-align: center;
+        width: 95%; 
+        margin-left: 0px;
+    }
+    
+    .about-us-container {
+        width: 1130px;
+        max-width: 95%;
+        margin: 0 auto;
+        display: inline;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .about-us-text h1 {
+        color: var(--Main);
+        font-size: 60px;
+        font-weight: 800;
+        margin-bottom: 0px;
+    }
+    
+    .about-us-text h4 {
+        color: var(--Main);
+        font-size: 15px;
+        margin-top: 0px;
+    }
+    
+    .about-us-text span {
+        color: var(--dark);
+        pointer-events: cursor;
+        text-decoration: none;
+    }
+    
+    .about-us-text p {
+        letter-spacing: 1px;
+        line-height: 40px;
+        font-size: 15px;
+        margin-bottom: 50px;
+    }
+    
+    .button-container  {
+        text-align: center;
+    }
+    
+}
+
+/* image in super small screen fix */
+@media (max-width: 420px) {
+    .about-us img {
+        height: auto;
+        width: 300px;
+        border-radius: 30px;
+    }
+}
