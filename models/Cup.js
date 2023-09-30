@@ -45,7 +45,7 @@ Cup.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'cup',
+    modelName: 'Cup',
   }
 );
 

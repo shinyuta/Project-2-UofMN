@@ -84,37 +84,37 @@ router.get('/login', (req, res) => {
 });
 
 // Get's user's cups and all the cups data
-router.get('/userCups/:id' , async (req,res) => {
-  try {
-    const userData = await  User.findByPk(req.params.id, {
-      include: [
-      {
-        model:Cup,
-        attributes: [
-          'name',
-          'filename',
-          'launch'
-        ],
-      },
-    ],
-    });
+// router.get('/userCups/:id' , async (req,res) => {
+//   try {
+//     const userData = await  User.findByPk(req.params.id, {
+//       include: [
+//       {
+//         model:Cup,
+//         attributes: [
+//           'name',
+//           'filename',
+//           'launch'
+//         ],
+//       },
+//     ],
+//     });
 
       // {all: true, nested: true}});
 
-    const user = userData.get({ plain:true });
+    // const user = userData.get({ plain:true });
 
-    res.render('user', {user});
+    // res.render('user', {user});
 
     // const userCups =  await userData.map((allData) => {allData.get({force:true})});
 
     // res.status(200).json(userData);
     // res.render('users', {userCups});
 
-  } catch (err) {
-    console.log(err);
-    res.status(400).json(err);
-  }
-})
+//   } catch (err) {
+//     console.log(err);
+//     res.status(400).json(err);
+//   }
+// })
 
 router.get('/users', async (req, res) => {
   try {
@@ -123,8 +123,8 @@ router.get('/users', async (req, res) => {
         {
           model: Cup,
           attributes: ['filename', 'name'],
-          // model: UserCup,
-          // attributes: ['user_id', 'cup_id', 'id'],
+          model: UserCup,
+          attributes: ['user_id', 'cup_id', 'id'],
         },
       ],
     });
