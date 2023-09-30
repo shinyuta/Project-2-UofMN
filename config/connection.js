@@ -2,6 +2,7 @@ const Sequelize = require('sequelize');
 require('dotenv').config();
 
 let sequelize;
+const app = express();
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
