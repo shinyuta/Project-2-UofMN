@@ -1,19 +1,17 @@
 
-    <!-- add cards -->
-    
     {{#if cups.length}}
-    <div id ='user-cups'>
+    {{!-- <div id ='user-cups'> --}}
         {{#each cups as |Cup|}}
         <div class="mug-cards">
             <div class="mug">
-                {{!-- <div class="mug-img"> --}}
+                <div class="mug-img">
                 <img src="/images/{{Cup.filename}}">
-                {{!-- </div> --}}
+                </div>
                 <div class="mug-info">
                     <h3 class="header">{{Cup.name}}</h3>
-                    <p>{{Launch.launchDate}}</p>
+                    <p>{{Cup.launchDate}}</p>
                     {{!-- saw there is no price created for cups on backend --}}
-                    <span class="price">$price</span>
+                    <span class="price">{{Cup.size}}</span>
                     
                 </div>
             
@@ -24,6 +22,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    {{!-- </div> --}}
     {{/each}}
 {{/if}}
