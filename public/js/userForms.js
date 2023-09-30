@@ -23,8 +23,9 @@ try {
 };
 
 const signUpForm = async (event) => {
+    event.preventDefault()
     try {
-        event.preventDefault()
+   
         console.log("iwas here")
         const first_name = await document.querySelector('#first_name').value.trim();
         const last_name = await document.querySelector('#last_name').value.trim();
@@ -62,8 +63,8 @@ const logout = async () => {
     }
   };
   
-  document.querySelector('#logout').addEventListener('click', logout);
-  document.querySelector('#signup-form').addEventListener('submit', signUpForm)
+// document.querySelector('#logout').addEventListener('click', logout);
+// document.querySelector('.signup-form').addEventListener('submit', signUpForm)
   
 
 

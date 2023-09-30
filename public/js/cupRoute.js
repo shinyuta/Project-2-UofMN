@@ -1,11 +1,13 @@
-const signUpForm = async (event) => {
-    try {
+const form = document.querySelector('.signup-form')
+
+form.addEventListener('submit',  (event) => {
+
         event.preventDefault()
         console.log("i was here")
-        const first_name = await document.querySelector('#first_name').value.trim();
-        const last_name = await document.querySelector('#last_name').value.trim();
-        const password = await document.querySelector('#password').value.trim();
-        const username = await document.querySelector('#username').value.trim()
+        const first_name = document.querySelector('#first_name').value.trim();
+        const last_name = document.querySelector('#last_name').value.trim();
+        const password = document.querySelector('#password').value.trim();
+        const username = document.querySelector('#username').value.trim()
     
         if (first_name && last_name&& password && username) {
             const signUp = fetch('/api/users/', {
@@ -20,9 +22,6 @@ const signUpForm = async (event) => {
                 alert('FAILED TO LOGIN')
             };
         };
-    } catch (err) {
-        console.log(err);
-    };
-};
+})
 
-document.querySelector('#signup').addEventListener('submit', signUpForm)
+
