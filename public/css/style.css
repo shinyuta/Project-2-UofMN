@@ -469,7 +469,7 @@ header .search {
 /* USER CUPS */
 /* USER CUPS */
 
-.mug-cards {
+ .mug-cards {
     width: auto;
     height: auto;
     display: grid;
@@ -487,7 +487,7 @@ header .search {
 
 /* switch to 1 per line at 800px width */
  
-@media (max-width: 1000px) {
+/* @media (max-width: 200px) {
     #user-cups {
         align-items: center;
     }
@@ -511,7 +511,7 @@ header .search {
         margin-top: 1rem;
         justify-content: center;
     }
-}
+} */
 
 
 /* LOGIN FORM */
