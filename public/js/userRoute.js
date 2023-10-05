@@ -28,7 +28,7 @@ const signUpForm = async (event) => {
         
         const password = await document.querySelector('#password').value.trim();
         const username = await document.querySelector('#username').value.trim();
-        console.log(password)
+        // console.log(password)
         console.log(username)
         if (password && username) {
             const signUp = fetch('/api/users/', {
@@ -37,12 +37,11 @@ const signUpForm = async (event) => {
                 headers: {'Content-Type': 'application/json'},
             })
             console.log(signUp)
-            if(signUp.ok) {
-                document.location.replace('/')
-            }else (error) {
-                console.log(error)
-                alert('FAILED TO LOGIN')
-            };
+          
+                if(signUp.ok) {
+                    document.location.replace('/')
+                } else (console.log(err)) 
+           
         };
     } catch (err) {
         console.log(err);
