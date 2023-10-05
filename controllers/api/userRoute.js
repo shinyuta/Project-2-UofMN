@@ -1,14 +1,19 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-const withAuth = require('../../middleware/withAuth')
+
 
 
 //get request that routes to handlebar template 
-router.get('/login', (req, res) => {
-  res.render('login', {
-      layout: 'main',
-      // logged_in: req.session.logged_in 
-  });
+router.get('/login', async(req, res) => {
+  try{
+    const userData = await User.create(req.body);
+  } catch(err){
+    res.status(400).json(err);
+  }
+  // res.render('login', {
+  //     layout: 'main',
+  //     // logged_in: req.session.logged_in 
+  // });
 });
 
 
@@ -57,6 +62,7 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
+      req.session.user_id=userData.id;
       req.session.logged_in = true;
 
       res

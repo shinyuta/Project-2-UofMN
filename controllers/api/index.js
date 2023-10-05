@@ -9,7 +9,6 @@ router.use('/users', userRoutes);
 router.use('/emailRoute', emailRoute);
 router.use('/aboutRoute', aboutRoute);
 router.use('/signupRoute', signupRoute);
-router.use('./userRoute', userRoutes);
 // router.use('./loginRoute', loginRoutes);
 
 
