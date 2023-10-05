@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const {User} = require('../../models');
+
 
 router.get('/signup', (req, res) => {
     res.render('signup', {
@@ -7,4 +9,18 @@ router.get('/signup', (req, res) => {
     });
 });
 
+
+router.post('/signUp', async (req,res) => {
+try {
+    const userData = User.create(req.body);
+    // req.session.save(() => {
+        // req.session.user_id = userData.id;
+        // req.session.logged_in = true;
+  
+        res.status(200).json(userData);
+    //   });
+} catch (err) {
+    console.log(err)
+}
+});
 module.exports = router;

@@ -25,14 +25,13 @@ try {
 const signUpForm = async (event) => {
     try {
         event.preventDefault()
-        const email = await document.querySelector('email').value.trim();
         const password = await document.querySelector('password').value.trim();
-        const username = await document.querySelector('username').value.trim
+        const username = await document.querySelector('username').value.trim();
     
         if (email && password && username ) {
-            const signUp = fetch('/api/users', {
+            const signUp = fetch('/api/signupRoute/signUp', {
                 method: 'POST',
-                body: JSON.stringify({email, password, username}),
+                body: JSON.stringify({password, username}),
                 headers: {'Content-Type': 'application/json'},
             })
         
@@ -60,7 +59,7 @@ const logout = async () => {
     }
   };
   
-  document.querySelector('#logout').addEventListener('click', logout);
+//   document.querySelector('#logout').addEventListener('click', logout);
   
-
+document.querySelector('#signup-form').addEventListener('submit',signUpForm);
 
