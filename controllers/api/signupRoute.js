@@ -10,7 +10,7 @@ router.get('/signup', (req, res) => {
 });
 
 
-router.post('/signUp', async (req,res) => {
+router.post('/signUserUp', async (req,res) => {
 try {
     const userData = User.create(req.body);
     // req.session.save(() => {
