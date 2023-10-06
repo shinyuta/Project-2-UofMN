@@ -5,7 +5,7 @@
 <br>
 <div class = "center">
         <h1>Sign Up</h1>
-        <form method = "post"> 
+        <form  id="signup-form"> 
             <div class="text-field-signup">
                 <input type="text" required>
                 <span></span>
@@ -17,19 +17,14 @@
                 <label>Last Name</label>
             </div>
             <div class="text-field-signup">
-                <input type="text" required>
+                <input type="text" id="username" required>
                 <span></span>
                 <label>User Name</label>
             </div>
             <div class="text-field-signup">
-                <input type="password" required>
+                <input type="password" id="password" required>
                 <span></span>
                 <label>Password</label>
-            </div>
-            <div class="text-field-signup">
-                <input type="password" required>
-                <span></span>
-                <label>Confirm Password</label>
             </div>
             <div class="terms-privacy-div">By clicking the Sign Up button you agree to our <a href='#' class = terms-privacy>Terms and Conditions</a>
             and <a href='#' class = terms-privacy>Privacy Policy</a>
@@ -40,3 +35,5 @@
             </div>
         </form>
     </div>
+
+    <script src="/js/userRoute.js"></script>
