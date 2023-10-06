@@ -31,22 +31,24 @@ const signUpForm = async (event) => {
         // console.log(password)
         console.log(username)
         if (password && username) {
-            const signUp = fetch('/api/users/', {
+            const signUp = await fetch('/api/users/', {
                 method: 'POST',
                 body: JSON.stringify({password, username}),
                 headers: {'Content-Type': 'application/json'},
             })
-            console.log(signUp)
+            console.log('signup',signUp)
           
                 if(signUp.ok) {
                     document.location.replace('/')
-                } else (console.log(err)) 
-           
-        };
-    } catch (err) {
-        console.log(err);
-    };
-};
+                } else {
+                alert('something went wrong')
+            }
+    } 
+}
+
+catch (err) {
+    console.log(err);
+ }};
 // taken from School Work
 const logout = async () => {
     const response = await fetch('/api/users/logout', {
