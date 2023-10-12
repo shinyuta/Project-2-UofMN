@@ -1,11 +1,11 @@
 const loginFormHandler = async (event) => {
 try {
     event.preventDefault()
-    const username = await document.querySelector('username').value.trim();
-    const password = await document.querySelector('password').value.trim();
+    const username = await document.querySelector('#username').value.trim();
+    const password = await document.querySelector('#password').value.trim();
 
-    if (email && password) {
-        const login = fetch('/api/users/login', {
+    if (username && password) {
+        const login = fetch('/signupRoute', {
             method: 'POST',
             body: JSON.stringify({username, password}),
             headers: {'Content-Type': 'application/json'},
@@ -25,12 +25,12 @@ try {
 const signUpForm = async (event) => {
     try {
         event.preventDefault()
-        const username = await document.querySelector('user').value.trim();
-        const password = await document.querySelector('password').value.trim();
+        const username = await document.querySelector('#user').value.trim();
+        const password = await document.querySelector('#password').value.trim();
         // const username = await document.querySelector('username').value.trim
     
-        if (email && password && username ) {
-            const signUp = fetch('/api/users', {
+        if (password && username ) {
+            const signUp = fetch('/signupRoute', {
                 method: 'POST',
                 body: JSON.stringify({ password, username}),
                 headers: {'Content-Type': 'application/json'},
