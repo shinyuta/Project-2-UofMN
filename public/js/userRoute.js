@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 const loginFormHandler = async (event) => {
 try {
     event.preventDefault()
@@ -5,7 +7,7 @@ try {
     const password = await document.querySelector('#password').value.trim();
 
     if (username && password) {
-        const login = fetch('/signupRoute', {
+        const login = fetch('/api/users/', {
             method: 'POST',
             body: JSON.stringify({username, password}),
             headers: {'Content-Type': 'application/json'},
@@ -66,4 +68,4 @@ const logout = async () => {
 //   document.querySelector('#logout').addEventListener('click', logout);
   
 document.querySelector('#signup-form').addEventListener('submit',signUpForm);
-
+document.querySelector('#login-form').addEventListener('submit', loginFormHandler);

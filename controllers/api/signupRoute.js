@@ -9,23 +9,6 @@ router.get('/signup', (req, res) => {
     });
 });
 
-<<<<<<< HEAD
-router.post('/signup', async (req, res) => {
-    try {
-      const userData = await User.create(req.body);
-  
-      req.session.save(() => {
-        req.session.user_id = userData.id;
-        req.session.logged_in = true;
-  
-        res.status(200).json(userData);
-      });
-    } catch (err) {
-      res.status(400).json(err);
-    }
-  });
-
-=======
 
 router.post('/signUserUp', async (req,res) => {
 try {
@@ -40,5 +23,4 @@ try {
     console.log(err)
 }
 });
->>>>>>> ef243b2ac0a02ac4c9c9901aa5db9095971c90db
 module.exports = router;

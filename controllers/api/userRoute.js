@@ -4,18 +4,18 @@ const { User } = require('../../models');
 
 
 //get request that routes to handlebar template 
-router.get('/login', async(req, res) => {
-  try{
-    const userData = await User.create(req.body);
-  } catch(err){
-    res.status(400).json(err);
-  }
-  // res.render('login', {
-  //     layout: 'main',
-  //     // logged_in: req.session.logged_in 
-  // });
+router.get('/login', (req, res) => {
+  res.render('login', {
+    layout: 'main',
+    // logged_in: req.session.logged_in 
 });
-
+  // try{
+  //   const userData = await User.create(req.body);
+  // } catch(err){
+  //   res.status(400).json(err);
+  // }
+  //     // logged_in: req.session.logged_in 
+});
 
 router.post('/', async (req, res) => {
   try {
