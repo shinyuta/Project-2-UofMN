@@ -33,16 +33,21 @@ router.get('/', async (req, res) => {
 });
 
 // write a get route for users to get all assoiated cups
+router.get('/login', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
+});
 
 
 // GET one Cup
 router.get('/cup/:id' , async (req, res) => {
-  // If the user is not logged in, redirect the user to the login page
-  // If the user is logged in, allow them to view one cup
   try {
   const dbCupData = await Cup.findByPk(req.params.id);
 
-  // some issue with get here
   const cup = dbCupData.get({ plain: true });
 
   res.render('onecup', { cup, logged_in:req.session.logged_in });
@@ -51,25 +56,7 @@ router.get('/cup/:id' , async (req, res) => {
   res.status(500).json(err);
 }
 });
-    // try {
-    //   const cupData = await Cup.findByPk(req.params.id ,{ 
-    //     include: [
-    //       {model:Launch, attributes:['name', 'launch_date']},
-    //       {model: User, attributes: ['username','email']}
-    //     ]
-    //   });
-    //   const cups = cupData.get({ plain: true });
 
-    //   res.render('cup', {
-    //     cups,});
-
-    //   // res.status(200).json(cups)
-    //   // res.render('homepage', { cups, loggedIn: req.session.loggedIn });
-    // } catch (err) {
-    //   console.log(err);
-    //   res.status(500).json(err);
-    // }
-// });
 
 // Get's user's cups and all the cups data
 router.get('/userCups/:id' , withAuth, async (req,res) => {
@@ -87,14 +74,9 @@ router.get('/userCups/:id' , withAuth, async (req,res) => {
     ],
     });
 
-      // {all: true, nested: true}});
-
     const user = userData.get({ plain:true });
 
     res.render('user', {user});
-
-    // const userCups =  await userData.map((allData) => {allData.get({force:true})});
-
     // res.status(200).json(userData);
     // res.render('users', {userCups});
 
