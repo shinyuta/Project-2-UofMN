@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { Cup, Launch , User, UserCup} = require('../models/index');
-const withAuth =  require('../middleware/withAuth');
-
+const withAuth = require("../middleware/withAuth");
 
 // GET all Cups for homepage
 router.get('/', async (req, res) => {
@@ -23,12 +22,10 @@ router.get('/', async (req, res) => {
     );
 
 
-    res.render('cup', {
+    res.render('Cup', {
       cups,
-      // logged_in: req.session.logged_in,
+      logged_in: req.session.logged_in
     });
-    // res.json(cupData)
-    // res.status(200).json(cups)
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -45,49 +42,6 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-
-// GET one Cup
-router.get('/cup/:id' , async (req, res) => {
-  try {
-  const dbCupData = await Cup.findByPk(req.params.id);
-
-  const cup = dbCupData.get({ plain: true });
-
-  res.render('onecup', { cup });
-  } catch (err) {
-  console.log(err);
-  res.status(500).json(err);
-}
-});
-
-
-// Get's user's cups and all the cups data
-router.get('/userCups/:id' , async (req,res) => {
-  try {
-    const userData = await  User.findByPk(req.params.id, {
-      include: [
-      {
-        model:Cup,
-        attributes: [
-          'name',
-          'filename',
-          'launch'
-        ],
-      },
-    ],
-    });
-
-    const user = userData.get({ plain:true });
-
-    res.render('user', {user});
-    // res.status(200).json(userData);
-    // res.render('users', {userCups});
-
-  } catch (err) {
-    console.log(err);
-    res.status(400).json(err);
-  }
-})
 
 router.get('/users', async (req, res) => {
   try {
@@ -114,5 +68,49 @@ router.get('/users', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+// GET one Cup
+router.get('/cup/:id' , async (req, res) => {
+  try {
+  const dbCupData = await Cup.findByPk(req.params.id);
+
+  const cup = dbCupData.get({ plain: true });
+
+  res.render('onecup', { cup, logged_in:req.session.logged_in });
+  } catch (err) {
+  console.log(err);
+  res.status(500).json(err);
+}
+});
+
+
+// Get's user's cups and all the cups data
+router.get('/userCups/:id' , withAuth, async (req,res) => {
+  try {
+    const userData = await  User.findByPk(req.params.id, {
+      include: [
+      {
+        model:Cup,
+        attributes: [
+          'name',
+          'filename',
+          'launch'
+        ],
+      },
+    ],
+    });
+
+    const user = userData.get({ plain:true });
+
+    res.render('user', {user});
+    // res.status(200).json(userData);
+    // res.render('users', {userCups});
+
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+})
 
 module.exports = router;
