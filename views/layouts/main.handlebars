@@ -27,14 +27,15 @@
                 <li> <a href = "/"> HOME </a></li>
                 <li> <a href = "/api/aboutRoute/about"> ABOUT </a></li>
                 <li> <a href = "/api/emailRoute/contact"> CONTACT </a></li>
-                <li> <a href = "/api/signupRoute/signup"> SIGNUP </a></li>
 
-                {{!-- {{#if !logged_in}}
 
-                <li> <a href = "#"> LOGIN </a></li>
+                {{#if logged_in}}
+                <li> <button id="logout"> LOGOUT </button></li>
+
                 {{ else }}
-                <li> <a href = "#"> LOGOUT </a></li>
-                {{/if}} --}}
+                <li> <a href = "/api/signupRoute/signup"> SIGNUP </a></li>
+                <li> <a href = "/login"> LOGIN </a></li>
+                {{/if}}
             </ul>
             <div class = "search">
                 <span class ="icon"> 
@@ -77,6 +78,7 @@
     <script  src="/js/app.js"></script>
     <script  src="/js/contact.js"></script>
     
+    <script src="/js/logout.js"></script>
 
 </body>
 

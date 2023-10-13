@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
 
     res.render('Cup', {
       cups,
-      // logged_in: req.session.logged_in
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     console.log(err);
@@ -40,6 +40,33 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+
+router.get('/users', async (req, res) => {
+  try {
+    const dbUserData = await User.findAll({
+      include: [
+        {
+          model: Cup,
+          attributes: ['filename', 'name'],
+          // model: UserCup,
+          // attributes: ['user_id', 'cup_id', 'id'],
+        },
+      ],
+    });
+
+    const users = dbUserData.map((User) =>
+    User.get({ plain: true })
+    );
+
+    res.render('user', {
+      users,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 
@@ -85,39 +112,5 @@ router.get('/userCups/:id' , withAuth, async (req,res) => {
     res.status(400).json(err);
   }
 })
-
-router.get('/login', (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect('/userCups/:id');
-    return;
-  }
-  res.render('login');
-});
-
-router.get('/users', async (req, res) => {
-  try {
-    const dbUserData = await User.findAll({
-      include: [
-        {
-          model: Cup,
-          attributes: ['filename', 'name'],
-          // model: UserCup,
-          // attributes: ['user_id', 'cup_id', 'id'],
-        },
-      ],
-    });
-
-    const users = dbUserData.map((User) =>
-    User.get({ plain: true })
-    );
-
-    res.render('user', {
-      users,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
 
 module.exports = router;

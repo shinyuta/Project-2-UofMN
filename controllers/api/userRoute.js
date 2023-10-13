@@ -2,21 +2,6 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 
-
-//get request that routes to handlebar template 
-router.get('/login', (req, res) => {
-  res.render('login', {
-    layout: 'main',
-    // logged_in: req.session.logged_in 
-});
-  // try{
-  //   const userData = await User.create(req.body);
-  // } catch(err){
-  //   res.status(400).json(err);
-  // }
-  //     // logged_in: req.session.logged_in 
-});
-
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create({
@@ -24,10 +9,10 @@ router.post('/', async (req, res) => {
       password: req.body.password
     });
 
-    // req.session.save(() => {
-    //   req.session.logged_in = true;
+    req.session.save(() => {
+      req.session.logged_in = true;
       res.status(200).json(userData);
-    // });
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -39,7 +24,7 @@ router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({
       where: {
-        email: req.body.email,
+        username: req.body.username
       },
     });
 
@@ -50,7 +35,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = await UserData.checkPassword(req.body.password);
+    const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
@@ -60,12 +45,12 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.user_id=userData.id;
+      req.session.user_id = userData.id;
       req.session.logged_in = true;
 
       res
         .status(200)
-        .json({ user: UserData, message: 'You are now logged in!' });
+        .json({ user: userData, message: 'You are now logged in!' });
     });
   } catch (err) {
     console.log(err);
