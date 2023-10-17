@@ -1,8 +1,6 @@
 
-    {{#if cups.length}}
-    {{!-- <div id ='user-cups'> --}}
         {{#each cups as |Cup|}}
-        <div class="mug-cards">
+        <div>
             <div class="mug">
                 <div class="mug-img">
                 <img src="/images/{{Cup.filename}}">
@@ -22,6 +20,4 @@
                 </div>
             </div>
         </div>
-    {{!-- </div> --}}
     {{/each}}
-{{/if}}
