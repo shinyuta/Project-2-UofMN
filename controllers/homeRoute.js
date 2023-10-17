@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
     );
 
 
-    res.render('Cup', {
+    res.render('cup', {
       cups,
       logged_in: req.session.logged_in
     });

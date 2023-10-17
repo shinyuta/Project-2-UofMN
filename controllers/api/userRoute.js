@@ -26,6 +26,7 @@ router.get('/login', (req, res) => {
       // logged_in: req.session.logged_in 
   });
 });
+
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({
