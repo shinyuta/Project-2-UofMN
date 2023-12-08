@@ -865,6 +865,30 @@ input[type="submit"]:hover {
     }
     
 }
+/* ------------------ Home ---------------------- */
+.home{
+    background-color: var(--light);
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 2%;
+}
+
+.home-text{
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2%;
+}
+
+.home img{
+    width: 90%;
+    border-radius: 30px;
+}
 
 /* image in super small screen fix */
 @media (max-width: 420px) {
